@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1",
+    "name": "Morning Blend Coffee",
+    "category": "Coffee",
+    "description": "Smooth medium roast with notes of chocolate and caramel. 250g whole beans.",
+    "price": 12.5,
+    "image": "/images/products/product-1.svg",
+    "alt": "Placeholder image for Morning Blend Coffee"
+  },
+  {
+    "id": "2",
+    "name": "Dark Roast Espresso",
+    "category": "Coffee",
+    "description": "Bold and rich, roasted for espresso machines and moka pots. 250g whole beans.",
+    "price": 13.95,
+    "image": "/images/products/product-2.svg",
+    "alt": "Placeholder image for Dark Roast Espresso"
+  },
+  {
+    "id": "3",
+    "name": "Decaf Colombian",
+    "category": "Coffee",
+    "description": "All the flavour, none of the caffeine. Swiss water processed. 250g ground.",
+    "price": 11.0,
+    "image": "/images/products/product-3.svg",
+    "alt": "Placeholder image for Decaf Colombian"
+  },
+  {
+    "id": "4",
+    "name": "Ethiopian Single Origin",
+    "category": "Coffee",
+    "description": "Light roast with bright citrus and floral notes. 250g whole beans.",
+    "price": 15.5,
+    "image": "/images/products/product-4.svg",
+    "alt": "Placeholder image for Ethiopian Single Origin"
+  },
+  {
+    "id": "5",
+    "name": "Ceramic Pour-Over",
+    "category": "Brewing",
+    "description": "Hand-glazed dripper that brews one perfect cup at a time.",
+    "price": 24.0,
+    "image": "/images/products/product-5.svg",
+    "alt": "Placeholder image for Ceramic Pour-Over"
+  },
+  {
+    "id": "6",
+    "name": "Glass Cafetière",
+    "category": "Brewing",
+    "description": "Classic 8-cup French press with a stainless steel filter.",
+    "price": 29.99,
+    "image": "/images/products/product-6.svg",
+    "alt": "Placeholder image for Glass Cafetière"
+  },
+  {
+    "id": "7",
+    "name": "Hand Coffee Grinder",
+    "category": "Brewing",
+    "description": "Adjustable ceramic burrs for anything from espresso to cold brew.",
+    "price": 39.0,
+    "image": "/images/products/product-7.svg",
+    "alt": "Placeholder image for Hand Coffee Grinder"
+  },
+  {
+    "id": "8",
+    "name": "Gooseneck Kettle",
+    "category": "Brewing",
+    "description": "1 litre stovetop kettle with a slim spout for precise pouring.",
+    "price": 34.5,
+    "image": "/images/products/product-8.svg",
+    "alt": "Placeholder image for Gooseneck Kettle"
+  },
+  {
+    "id": "9",
+    "name": "Travel Mug",
+    "category": "Accessories",
+    "description": "Double-walled, leak-proof and keeps coffee hot for 6 hours.",
+    "price": 18.5,
+    "image": "/images/products/product-9.svg",
+    "alt": "Placeholder image for Travel Mug"
+  },
+  {
+    "id": "10",
+    "name": "Stoneware Mug Set",
+    "category": "Accessories",
+    "description": "Set of two 350ml mugs, dishwasher and microwave safe.",
+    "price": 22.0,
+    "image": "/images/products/product-10.svg",
+    "alt": "Placeholder image for Stoneware Mug Set"
+  },
+  {
+    "id": "11",
+    "name": "Paper Filters (100)",
+    "category": "Accessories",
+    "description": "Unbleached paper filters that fit our Ceramic Pour-Over.",
+    "price": 5.5,
+    "image": "/images/products/product-11.svg",
+    "alt": "Placeholder image for Paper Filters (100)"
+  },
+  {
+    "id": "12",
+    "name": "Coffee Gift Box",
+    "category": "Gifts",
+    "description": "Three 100g bags of our best sellers in a recycled gift box.",
+    "price": 27.0,
+    "image": "/images/products/product-12.svg",
+    "alt": "Placeholder image for Coffee Gift Box"
+  }
+]
