@@ -79,32 +79,6 @@
     "price": 18.5,
     "image": "/images/products/product-9.svg",
     "alt": "Placeholder image for Travel Mug"
-  },
-  {
-    "id": "10",
-    "name": "Stoneware Mug Set",
-    "category": "Accessories",
-    "description": "Set of two 350ml mugs, dishwasher and microwave safe.",
-    "price": 22.0,
-    "image": "/images/products/product-10.svg",
-    "alt": "Placeholder image for Stoneware Mug Set"
-  },
-  {
-    "id": "11",
-    "name": "Paper Filters (100)",
-    "category": "Accessories",
-    "description": "Unbleached paper filters that fit our Ceramic Pour-Over.",
-    "price": 5.5,
-    "image": "/images/products/product-11.svg",
-    "alt": "Placeholder image for Paper Filters (100)"
-  },
-  {
-    "id": "12",
-    "name": "Coffee Gift Box",
-    "category": "Gifts",
-    "description": "Three 100g bags of our best sellers in a recycled gift box.",
-    "price": 27.0,
-    "image": "/images/products/product-12.svg",
-    "alt": "Placeholder image for Coffee Gift Box"
   }
+
 ]

@@ -6,6 +6,8 @@ const exphbs = require('express-handlebars');
 // instantiate express
 const app = express();
 
+const PORT = 3000;
+
 // configure express to use handlebars as templating engine
 app.engine(
   'hbs',
@@ -36,7 +38,7 @@ app.set('views',  'views');
 
 
 // where to find static files - css, images, js
-// this needs to be uncommented so that the css file can be found and used in the layout.hbs file
+
 app.use(express.static('public'));
 
 // home page or home route
@@ -54,7 +56,7 @@ app.get('/', (req, res) => {
 });
 
 // contact route
-app.get('/getintouch', (req, res) => {
+app.get('/contact', (req, res) => {
     state={contact : true}
     head={title:"Contact - Week 1"}
     res.render('contact', { state, head});
@@ -110,6 +112,19 @@ app.get('/api/products', (req, res) => {
 });
 
 // Start the server
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+// this code will give an error if the port is already in use,
+//  for example if you have another terminal running the app
+
+app.listen(PORT, (error) => {
+  // error is only set if the server could not start
+  if (error) {
+    if (error.code === 'EADDRINUSE') {
+      console.error(`Port ${PORT} is already in use. Is the app already running in another terminal?`);
+    } else {
+      console.error('Server failed to start:', error.message);
+    }
+    process.exit(1); // stop the program with a "failed" exit code
+  }
+
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
