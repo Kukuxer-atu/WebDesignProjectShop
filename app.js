@@ -85,7 +85,8 @@ app.get('/product/:id', (req, res) => {
     return res.status(404).render('404', { head });
   }
 
-  const state = { shop: true };
+ // const state = { shop: true };
+ const state = {}
   const head = { title: product.name };
   res.render('product', { state, head, product });
 });
@@ -105,11 +106,16 @@ app.get('/checkout', (req, res) => {
   res.render('checkout', { state, head });
 });
 
+
 // sends the product list as JSON so cart.js can look up
 // names, prices and images for the ids stored in the cart
+// e.g. GET /api/products returns the whole products array
+// this is not rendered instead it returns data to the browser in JSON format
 app.get('/api/products', (req, res) => {
   res.json(products);
 });
+
+
 
 // Start the server
 // this code will give an error if the port is already in use,
