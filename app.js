@@ -41,6 +41,7 @@ app.set('views',  'views');
 
 app.use(express.static('public'));
 
+
 // home page or home route
 app.get('/', (req, res) => {
 
@@ -107,6 +108,8 @@ app.get('/checkout', (req, res) => {
 });
 
 
+
+
 // sends the product list as JSON so cart.js can look up
 // names, prices and images for the ids stored in the cart
 // e.g. GET /api/products returns the whole products array
@@ -117,10 +120,13 @@ app.get('/api/products', (req, res) => {
 
 
 
+
+app.use((req, res) => {
+    res.status(404).render('404');
+});
 // Start the server
 // this code will give an error if the port is already in use,
 //  for example if you have another terminal running the app
-
 app.listen(PORT, (error) => {
   // error is only set if the server could not start
   if (error) {

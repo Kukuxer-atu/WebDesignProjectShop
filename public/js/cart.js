@@ -17,8 +17,7 @@ const CART_KEY = 'cart';
 function cartItemHTML(product, qty) {
   return `
     <li class="cart-item">
-      <img src="${product.image}" alt="" width="80" height="80">
-      <div class="cart-item-details">
+        <img src="https://placehold.co/80x80" alt="{{alt}}" width="80" height="80">     
         <a href="/product/${product.id}">${product.name}</a>
         <p class="price">${euro(product.price)} each</p>
       </div>
