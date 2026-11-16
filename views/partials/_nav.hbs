@@ -1,11 +1,34 @@
 
-<nav>
-     <ul>
-          <li ><a  class='{{#if state.home}}active{{/if}}' href='/'>Home</a></li>     
-          <li><a class='{{#if state.shop}}active{{/if}}' href='/shop'>Shop</a></li>
-          <li><a class='{{#if state.contact}}active{{/if}}' href='/contact'>Contact</a></li>
-          {{!-- cart.js puts the number of items into data-cart-count --}}
-          <li><a class='{{#if state.cart}}active{{/if}}' href='/cart'>Cart (<span data-cart-count>0</span>)</a></li>
-
-     </ul>
-</nav>
+<header class="site-header">
+  <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="side-menu" aria-expanded="false" data-menu-toggle>
+    <span class="menu-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+  </button>
+  <a href="/" class="header-brand" aria-label="CactuShop home">
+    <img src="/images/cactushop-logo.svg" alt="" width="53" height="45">
+    <span>CactuShop</span>
+  </a>
+  <div class="header-actions">
+    <a href="/shop#shop-search" class="header-icon" aria-label="Search the shop">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.7" cy="10.7" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+    </a>
+    <a href="/cart" class="header-icon cart-link" aria-label="View shopping cart">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h3l2.6 12.5h11.3l2-9.5H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+      <span class="cart-count" data-cart-count>0</span>
+    </a>
+  </div>
+</header>
+<div class="menu-backdrop" data-menu-backdrop></div>
+<aside class="side-menu" id="side-menu" aria-label="Main navigation" aria-hidden="true" inert>
+  <div class="side-menu-head"><strong>CactuShop</strong><button type="button" class="close-menu" data-menu-close aria-label="Close navigation">&times;</button></div>
+  <nav aria-label="Site pages">
+    <a class="{{#if state.home}}active{{/if}}" href="/">Home</a>
+    <a class="{{#if state.shop}}active{{/if}}" href="/shop">Shop</a>
+    <a href="/shop?category=Tall">Tall cactuses</a>
+    <a href="/shop?category=Round">Round cactuses</a>
+    <a href="/shop?category=Sharp">Sharp cactuses</a>
+    <a href="/shop?category=Columnar">Columnar cactuses</a>
+    <a class="{{#if state.contact}}active{{/if}}" href="/contact">Contact</a>
+    <a class="{{#if state.cart}}active{{/if}}" href="/cart">Your cart</a>
+  </nav>
+  <div class="menu-note"><span aria-hidden="true">✿</span><br>Grow Green. Live Happy.<br>Discover a little desert joy for your home.</div>
+</aside>

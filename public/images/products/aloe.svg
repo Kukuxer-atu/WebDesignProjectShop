@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="Cactus illustration">
+<defs><linearGradient id="green" x1="0" x2="1" y1="0" y2="0"><stop stop-color="#2b7549"/><stop offset=".45" stop-color="#64a66a"/><stop offset="1" stop-color="#1b5a39"/></linearGradient><linearGradient id="pot" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#e9b38c"/><stop offset="1" stop-color="#ba7958"/></linearGradient></defs>
+<ellipse cx="160" cy="275" rx="87" ry="12" fill="#dfe9dc" opacity=".85"/>
+<path d="M160 229 L95 146 L145 200 L110 91 L163 184 L161 52 L181 179 L223 92 L193 196 L238 139 L182 229 Z" fill="#5eaa67" stroke="#236f45" stroke-width="4"/>
+<path d="M160 215 L130 119 M165 195 L165 65 M177 200 L210 112 M147 211 L110 157" stroke="#b2cf87" stroke-width="4" fill="none"/>
+<path d="M102 225 L218 225 L204 285 Q160 303 116 285 Z" fill="url(#pot)" stroke="#aa765e" stroke-width="3"/>
+<path d="M98 221 Q160 213 222 221 L218 238 Q160 245 102 238 Z" fill="#d99e77" stroke="#b78062" stroke-width="3"/>
+<ellipse cx="160" cy="222" rx="61" ry="10" fill="#69553f"/>
+<path d="M116 263 Q160 276 204 263" fill="none" stroke="#f5ccad" stroke-width="3" opacity=".65"/>
+</svg>

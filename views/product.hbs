@@ -1,13 +1,17 @@
+
 <main>
-
-
-  <article>
-    <img src="{{https://placehold.co/80x80}}" alt="{{product.alt}}" width="400">
-    <h1>{{product.name}}</h1>
-    <p>Category: {{product.category}}</p>
-    <p>{{product.description}}</p>
-    <p>Price: {{euro product.price}}</p>
-    <button type="button" data-add-to-cart="{{product.id}}">Add to cart</button>
-    <p data-cart-message aria-live="polite"></p>
+  <article class="product-detail">
+    <img class="detail-photo" src="{{product.image}}" alt="{{product.alt}}" width="450" height="450">
+    <div class="detail-info">
+      <p class="category-label">{{product.category}} cactus</p>
+      <h1 class="section-heading">{{product.name}}</h1>
+      <p>{{product.description}}</p>
+      <p class="price">{{euro product.price}}</p>
+      <div class="detail-actions">
+        <button type="button" class="add-to-cart" data-add-to-cart="{{product.id}}">Add to Cart</button>
+        <p class="cart-message" data-cart-message aria-live="polite"></p>
+      </div>
+      <p><a href="/shop">← Back to shop</a></p>
+    </div>
   </article>
 </main>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="Cactus illustration">
+<defs><linearGradient id="green" x1="0" x2="1" y1="0" y2="0"><stop stop-color="#2b7549"/><stop offset=".45" stop-color="#64a66a"/><stop offset="1" stop-color="#1b5a39"/></linearGradient><linearGradient id="pot" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#e9b38c"/><stop offset="1" stop-color="#ba7958"/></linearGradient></defs>
+<ellipse cx="160" cy="275" rx="87" ry="12" fill="#dfe9dc" opacity=".85"/>
+<path d="M143 225 Q128 194 142 168 Q157 145 181 167 Q204 191 182 225 Z" fill="#3f915b" stroke="#246b42" stroke-width="3"/>
+<ellipse cx="116" cy="130" rx="37" ry="55" fill="#5a9f65" stroke="#287246" stroke-width="3" transform="rotate(-30 116 130)"/>
+<ellipse cx="210" cy="133" rx="33" ry="51" fill="#60a46b" stroke="#287246" stroke-width="3" transform="rotate(30 210 133)"/>
+<ellipse cx="166" cy="95" rx="36" ry="52" fill="#6bad71" stroke="#287246" stroke-width="3"/>
+<circle cx="111" cy="108" r="3" fill="#c0d2a1"/><circle cx="120" cy="140" r="3" fill="#c0d2a1"/><circle cx="99" cy="151" r="3" fill="#c0d2a1"/><circle cx="146" cy="96" r="3" fill="#c0d2a1"/><circle cx="177" cy="101" r="3" fill="#c0d2a1"/><circle cx="166" cy="71" r="3" fill="#c0d2a1"/><circle cx="200" cy="145" r="3" fill="#c0d2a1"/><circle cx="216" cy="109" r="3" fill="#c0d2a1"/><circle cx="163" cy="185" r="3" fill="#c0d2a1"/><circle cx="174" cy="205" r="3" fill="#c0d2a1"/>
+<path d="M102 225 L218 225 L204 285 Q160 303 116 285 Z" fill="url(#pot)" stroke="#aa765e" stroke-width="3"/>
+<path d="M98 221 Q160 213 222 221 L218 238 Q160 245 102 238 Z" fill="#d99e77" stroke="#b78062" stroke-width="3"/>
+<ellipse cx="160" cy="222" rx="61" ry="10" fill="#69553f"/>
+<path d="M116 263 Q160 276 204 263" fill="none" stroke="#f5ccad" stroke-width="3" opacity=".65"/>
+</svg>

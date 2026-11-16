@@ -1,4 +1,39 @@
-<main>
-    <h1>Home Page</h1>
-    <p>Welcome to the home page of our application!</p>
+
+<main class="home-page">
+  <section class="brand-hero" aria-labelledby="home-title">
+    <img class="hero-logo" src="/images/cactushop-logo.svg" alt="Green cactus with a pink flower" width="160" height="124">
+    <h1 id="home-title">CactuShop</h1>
+    <p class="tagline">Grow Green. Live Happy.</p>
+  </section>
+
+  <section class="category-section" aria-label="Browse by cactus type">
+    <div class="category-grid">
+      <a class="category-card" href="/shop?category=Tall"><img src="/images/products/columnar.svg" alt="" width="105" height="100"><strong>Tall</strong></a>
+      <a class="category-card" href="/shop?category=Round"><img src="/images/products/barrel.svg" alt="" width="105" height="100"><strong>Round</strong></a>
+      <a class="category-card" href="/shop?category=Sharp"><img src="/images/products/aloe.svg" alt="" width="105" height="100"><strong>Sharp</strong></a>
+      <a class="category-card" href="/shop?category=Columnar"><img src="/images/products/saguaro.svg" alt="" width="105" height="100"><strong>Columnar</strong></a>
+    </div>
+  </section>
+
+  <section class="welcome-section" aria-labelledby="welcome-title">
+    <div class="welcome-copy">
+      <h2 class="section-heading" id="welcome-title">Bring Nature<br>Closer to You</h2>
+      <p>Discover our beautiful cactus collection, handpicked to add a touch of green and a little joy to any space.</p>
+      <a href="/shop" class="button">Shop Now <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="welcome-art" aria-hidden="true">
+      <img src="/images/products/barrel.svg" alt="">
+      <img src="/images/products/pink-flower.svg" alt="">
+      <img src="/images/products/saguaro.svg" alt="">
+    </div>
+  </section>
+
+  <section class="why-us" aria-labelledby="why-us-title">
+    <h2 class="section-heading" id="why-us-title">Why Choose Us?</h2>
+    <div class="benefits">
+      <div class="benefit"><span class="symbol" aria-hidden="true">✿</span><strong>Quality Plants</strong></div>
+      <div class="benefit"><span class="symbol" aria-hidden="true">♧</span><strong>Easy Plant Care</strong></div>
+      <div class="benefit"><span class="symbol" aria-hidden="true">♡</span><strong>Made for Plant Lovers</strong></div>
+    </div>
+  </section>
 </main>

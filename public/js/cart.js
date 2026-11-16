@@ -15,20 +15,17 @@ const CART_KEY = 'cart';
 
 // HTML for one row in the cart. "product" comes from products.json.
 function cartItemHTML(product, qty) {
-  return `
-    <li class="cart-item">
-        <img src="https://placehold.co/80x80" alt="{{alt}}" width="80" height="80">     
-        <a href="/product/${product.id}">${product.name}</a>
-        <p class="price">${euro(product.price)} each</p>
-      </div>
-      <label for="qty-${product.id}">Quantity</label>
-      <input type="number" id="qty-${product.id}" min="1" max="99"
-             value="${qty}" data-qty="${product.id}">
-      <p class="line-total">${euro(product.price * qty)}</p>
-      <button type="button" data-remove="${product.id}">
-        Remove <span class="visually-hidden">${product.name}</span>
-      </button>
-    </li>`;
+  return [
+    '<li class="cart-item">',
+    '<img src="' + product.image + '" alt="' + product.alt + '" width="80" height="80">',
+    '<div><a href="/product/' + product.id + '">' + product.name + '</a>',
+    '<p class="price">' + euro(product.price) + ' each</p></div>',
+    '<div><label for="qty-' + product.id + '">Qty </label>',
+    '<input type="number" id="qty-' + product.id + '" min="1" max="99" value="' + qty + '" data-qty="' + product.id + '"></div>',
+    '<p class="line-total">' + euro(product.price * qty) + '</p>',
+    '<button type="button" data-remove="' + product.id + '">Remove</button>',
+    '</li>'
+  ].join('');
 }
 
 // HTML for the total at the bottom of the cart
