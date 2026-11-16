@@ -1,42 +1,43 @@
 
-/* ==============================
-   CACTUSHOP - GENERAL STYLES
-============================== */
+/* =========================================
+   CACTUSHOP - GLOBAL STYLES
+========================================= */
+
+
+/* =========================================
+   COLOUR PALETTE
+========================================= */
 
 :root {
-    --green: #315B3C;
-    --dark-green: #23452D;
-    --sage: #8BAE75;
-    --cream: #F5EBDD;
-    --pink: #EFA6A0;
-    --light-pink: #F9E5E1;
-    --yellow: #E9B95E;
-    --terracotta: #D97955;
+    --green: #245D3A;
+    --medium-green: #397C50;
+    --light-green: #EEF4E9;
+
+    --pink: #EA8DA8;
+    --light-pink: #FCE9EF;
+
+    --cream: #FBFAF5;
     --white: #FFFFFF;
-    --text: #493C32;
+
+    --text-color: #263D2D;
 }
 
-* {
-    box-sizing: border-box;
-}
+
+/* =========================================
+   GENERAL STYLES
+========================================= */
 
 body {
     margin: 0;
     padding: 0;
+
     background-color: var(--white);
-    color: var(--text);
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    color: var(--text-color);
+
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-h1, h2, h3 {
-    color: var(--dark-green);
-    font-family: Georgia, serif;
-}
-
-p {
-    color: var(--text);
-}
+/* General links */
 
 a {
     color: var(--green);
@@ -44,205 +45,380 @@ a {
 }
 
 a:hover {
-    color: var(--terracotta);
+    color: var(--medium-green);
 }
 
-/* ==============================
-   NAVIGATION
-============================== */
+/* General headings */
 
-nav {
-    background-color: var(--cream);
-    padding: 20px 6%;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--green);
+}
+
+/* Responsive images */
+
+img {
+    max-width: 100%;
+}
+
+/* Keyboard accessibility */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--pink);
+    outline-offset: 3px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+/* Clean white header without navigation line */
+
+.site-header {
+    background-color: var(--white);
+    border: none;
+    box-shadow: none;
+}
+
+/* Hamburger button */
+
+.hamburger-btn {
+    background: transparent;
+    border: none;
+
+    color: var(--green);
+
+    font-size: 40px;
+    line-height: 1;
+    padding: 0;
+
+    transition: color 0.2s ease;
+}
+
+.hamburger-btn:hover {
+    color: var(--medium-green);
+}
+
+
+/* =========================================
+   ROUND HEADER ICONS
+========================================= */
+
+/* Search, profile and cart */
+
+.round-icon {
+    width: 56px;
+    height: 56px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--green);
+    color: var(--white);
+
+    border: none;
+    border-radius: 50%;
+
+    font-size: 25px;
+    line-height: 1;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.round-icon:hover {
+    background-color: var(--medium-green);
+    color: var(--white);
+
+    transform: scale(1.05);
+}
+
+/* Cart item counter */
+
+.cart-count {
+    position: absolute;
+
+    top: -5px;
+    right: -5px;
+
+    min-width: 22px;
+    height: 22px;
+    padding: 0 5px;
+
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
+    justify-content: center;
 
-nav::before {
-    content: "🌵 CactuShop";
-    font-family: Georgia, serif;
-    font-size: 28px;
-    font-weight: bold;
-    color: var(--green);
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-    padding: 0;
-    margin: 0;
-}
-
-nav li {
-    display: inline;
-}
-
-nav ul li a {
-    color: var(--dark-green);
-    font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 25px;
-}
-
-nav ul li a:hover {
     background-color: var(--pink);
-    color: var(--dark-green);
-}
-
-nav ul li a.active {
-    background-color: var(--green);
-    color: var(--white);
-}
-
-/* ==============================
-   MAIN CONTENT
-============================== */
-
-main {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 50px 0;
-}
-
-main h1 {
-    font-size: 38px;
-    margin-bottom: 20px;
-}
-
-main p {
-    font-size: 16px;
-}
-
-/* ==============================
-   BUTTONS
-============================== */
-
-button,
-.button {
-    background-color: var(--green);
-    color: var(--white);
-    border: none;
-    padding: 13px 25px;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover,
-.button:hover {
-    background-color: var(--terracotta);
-    color: var(--white);
-}
-
-/* ==============================
-   PRODUCT CARDS
-============================== */
-
-main:has(> article) {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 25px;
-}
-
-main:has(> article) > h1 {
-    grid-column: 1 / -1;
-}
-
-article {
-    background-color: var(--cream);
-    padding: 18px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-article img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-article h2 {
     color: var(--green);
+
+    border-radius: 50%;
+
+    font-size: 12px;
+    font-weight: bold;
 }
 
-article p {
-    color: var(--text);
+
+/* =========================================
+   BOOTSTRAP OFFCANVAS SIDEBAR
+========================================= */
+
+/* Sidebar appearance */
+
+.offcanvas {
+    background-color: var(--white);
 }
 
-/* ==============================
-   PRODUCT DETAIL
-============================== */
+/* Sidebar title */
 
-main > article:only-child {
-    max-width: 750px;
-    margin: 0 auto;
+.offcanvas-title {
+    color: var(--green);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 26px;
+    font-weight: bold;
 }
 
-/* ==============================
-   CART
-============================== */
+/* Sidebar links */
 
-#cart-items {
-    display: grid;
-    gap: 20px;
+.offcanvas-body nav a {
+    display: block;
+
+    padding: 12px 15px;
+
+    color: var(--green);
+
+    font-size: 17px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    border-radius: 12px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
 }
 
-/* ==============================
-   FOOTER
-============================== */
+.offcanvas-body nav a:hover {
+    background-color: var(--light-green);
+    color: var(--medium-green);
+}
 
-footer {
-    background-color: var(--dark-green);
-    color: var(--white);
-    text-align: center;
-    padding: 25px;
+/* Active page in menu */
+
+.offcanvas-body nav a.active {
+    background-color: var(--light-green);
+    color: var(--green);
+
+    font-weight: bold;
+}
+
+/* Close button focus */
+
+.offcanvas .btn-close:focus-visible {
+    outline: 3px solid var(--pink);
+    box-shadow: none;
+}
+
+
+/* =========================================
+   BOOTSTRAP DROPDOWN
+========================================= */
+
+.dropdown-menu {
+    border: 1px solid var(--light-green);
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   GLOBAL FOOTER
+========================================= */
+
+.site-footer {
+    position: relative;
+
     margin-top: auto;
+    padding: 0;
+
+    background-color: var(--cream);
+    border-top: 1px solid var(--light-green);
+
+    text-align: center;
+    overflow: hidden;
 }
 
-footer p {
-    color: var(--cream);
-    margin: 0;
+/* Footer shop name */
+
+.footer-name {
+    color: var(--green);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
 }
 
-/* ==============================
-   MOBILE RESPONSIVE DESIGN
-============================== */
+/* Footer tagline */
 
-@media (max-width: 650px) {
+.footer-tagline {
+    color: #588265;
+    font-size: 14px;
+}
 
-    nav {
-        flex-direction: column;
-        gap: 15px;
+/* Copyright */
+
+.footer-copyright {
+    color: #718476;
+    font-size: 12px;
+}
+
+/* Small cactus in bottom-right corner */
+
+.footer-cactus {
+    position: absolute;
+
+    width: 85px;
+    height: 100px;
+
+    right: 15px;
+    bottom: -10px;
+
+    object-fit: contain;
+    pointer-events: none;
+}
+
+
+/* =========================================
+   TABLET
+   577px - 991px
+========================================= */
+
+@media (min-width: 577px) and (max-width: 991px) {
+
+    /* Header icons */
+
+    .round-icon {
+        width: 49px;
+        height: 49px;
+
+        font-size: 22px;
     }
 
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
+    /* Hamburger */
+
+    .hamburger-btn {
+        font-size: 36px;
     }
 
-    nav ul li a {
-        padding: 8px 10px;
+}
+
+/* Footer cactus on tablets */
+
+@media (max-width: 991px) {
+
+    .footer-cactus {
+        width: 70px;
+        height: 85px;
+
+        right: 10px;
     }
 
-    main {
-        width: 92%;
-        padding: 30px 0;
+}
+
+
+/* =========================================
+   MOBILE
+   576px AND BELOW
+========================================= */
+
+@media (max-width: 576px) {
+
+    /* Hamburger */
+
+    .hamburger-btn {
+        font-size: 32px;
     }
 
-    main h1 {
-        font-size: 30px;
+    /* Header icons */
+
+    .round-icon {
+        width: 43px;
+        height: 43px;
+
+        font-size: 19px;
     }
 
-    article img {
-        height: 200px;
+    /* Cart counter */
+
+    .cart-count {
+        min-width: 19px;
+        height: 19px;
+
+        font-size: 10px;
     }
+
+    /* Sidebar */
+
+    .offcanvas-title {
+        font-size: 23px;
+    }
+
+    .offcanvas-body nav a {
+        font-size: 16px;
+    }
+
+    /* Footer */
+
+    .site-footer .container {
+        padding-left: 65px;
+        padding-right: 65px;
+    }
+
+    .footer-name {
+        font-size: 18px;
+    }
+
+    .footer-tagline {
+        font-size: 12px;
+    }
+
+    .footer-copyright {
+        font-size: 10px;
+    }
+
+    .footer-cactus {
+        width: 55px;
+        height: 70px;
+
+        right: 5px;
+        bottom: -5px;
+    }
+
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hamburger-btn,
+    .round-icon,
+    .offcanvas-body nav a {
+        transition: none;
+    }
+
 }

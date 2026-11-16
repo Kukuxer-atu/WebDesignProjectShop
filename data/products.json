@@ -1,84 +1,66 @@
+
 [
   {
     "id": "1",
-    "name": "Morning Blend Coffee",
-    "category": "Coffee",
-    "description": "Smooth medium roast with notes of chocolate and caramel. 250g whole beans.",
-    "price": 12.5,
-    "image": "/images/products/product-1.svg",
-    "alt": "Placeholder image for Morning Blend Coffee"
+    "name": "Pink Flower Cactus",
+    "category": "Round",
+    "description": "A beautiful small cactus with pink flowers, perfect for brightening up your room.",
+    "price": 14.99,
+    "image": "/images/products/pink-flower.svg",
+    "alt": "Round cactus with pink flowers"
   },
   {
     "id": "2",
-    "name": "Dark Roast Espresso",
-    "category": "Coffee",
-    "description": "Bold and rich, roasted for espresso machines and moka pots. 250g whole beans.",
-    "price": 13.95,
-    "image": "/images/products/product-2.svg",
-    "alt": "Placeholder image for Dark Roast Espresso"
+    "name": "Barrel Cactus",
+    "category": "Round",
+    "description": "A classic round cactus with golden spines.",
+    "price": 16.99,
+    "image": "/images/products/barrel.svg",
+    "alt": "Green barrel cactus"
   },
   {
     "id": "3",
-    "name": "Decaf Colombian",
-    "category": "Coffee",
-    "description": "All the flavour, none of the caffeine. Swiss water processed. 250g ground.",
-    "price": 11.0,
-    "image": "/images/products/product-3.svg",
-    "alt": "Placeholder image for Decaf Colombian"
+    "name": "Opuntia",
+    "category": "Sharp",
+    "description": "A prickly pear cactus with rounded green pads.",
+    "price": 13.99,
+    "image": "/images/products/opuntia.svg",
+    "alt": "Opuntia prickly pear cactus"
   },
   {
     "id": "4",
-    "name": "Ethiopian Single Origin",
-    "category": "Coffee",
-    "description": "Light roast with bright citrus and floral notes. 250g whole beans.",
-    "price": 15.5,
-    "image": "/images/products/product-4.svg",
-    "alt": "Placeholder image for Ethiopian Single Origin"
+    "name": "Aloe Vera",
+    "category": "Sharp",
+    "description": "A lovely green succulent with pointed leaves.",
+    "price": 15.99,
+    "image": "/images/products/aloe.svg",
+    "alt": "Aloe vera plant"
   },
   {
     "id": "5",
-    "name": "Ceramic Pour-Over",
-    "category": "Brewing",
-    "description": "Hand-glazed dripper that brews one perfect cup at a time.",
-    "price": 24.0,
-    "image": "/images/products/product-5.svg",
-    "alt": "Placeholder image for Ceramic Pour-Over"
+    "name": "Echinocactus",
+    "category": "Round",
+    "description": "A decorative round cactus with thick ribs.",
+    "price": 17.99,
+    "image": "/images/products/echinocactus.svg",
+    "alt": "Round echinocactus"
   },
   {
     "id": "6",
-    "name": "Glass Cafetière",
-    "category": "Brewing",
-    "description": "Classic 8-cup French press with a stainless steel filter.",
-    "price": 29.99,
-    "image": "/images/products/product-6.svg",
-    "alt": "Placeholder image for Glass Cafetière"
+    "name": "Columnar Cactus",
+    "category": "Columnar",
+    "description": "A tall and elegant cactus for your home.",
+    "price": 16.99,
+    "image": "/images/products/columnar.svg",
+    "alt": "Tall columnar cactus"
   },
   {
     "id": "7",
-    "name": "Hand Coffee Grinder",
-    "category": "Brewing",
-    "description": "Adjustable ceramic burrs for anything from espresso to cold brew.",
-    "price": 39.0,
-    "image": "/images/products/product-7.svg",
-    "alt": "Placeholder image for Hand Coffee Grinder"
-  },
-  {
-    "id": "8",
-    "name": "Gooseneck Kettle",
-    "category": "Brewing",
-    "description": "1 litre stovetop kettle with a slim spout for precise pouring.",
-    "price": 34.5,
-    "image": "/images/products/product-8.svg",
-    "alt": "Placeholder image for Gooseneck Kettle"
-  },
-  {
-    "id": "9",
-    "name": "Travel Mug",
-    "category": "Accessories",
-    "description": "Double-walled, leak-proof and keeps coffee hot for 6 hours.",
-    "price": 18.5,
-    "image": "/images/products/product-9.svg",
-    "alt": "Placeholder image for Travel Mug"
+    "name": "Tall Saguaro",
+    "category": "Tall",
+    "description": "A beautiful tall cactus with branching arms.",
+    "price": 19.99,
+    "image": "/images/products/saguaro.svg",
+    "alt": "Tall branching saguaro cactus"
   }
-
 ]

@@ -1,13 +1,25 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        {{> _head}}
-    </head>
-    <body>
-        {{> _nav}}
-        {{{body}}}
-        {{> _footer}}
-        {{!-- loaded on every page so the cart count in the nav is always up to date --}}
-        <script src="/js/cart.js"></script>
-    </body>
+
+<head>
+    {{> _head}}
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    {{> _nav}}
+
+    {{{body}}}
+
+    {{> _footer}}
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Shopping cart -->
+    <script src="/js/cart.js"></script>
+
+</body>
+
 </html>

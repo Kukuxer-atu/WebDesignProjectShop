@@ -1,11 +1,96 @@
 
-<nav>
-     <ul>
-          <li ><a  class='{{#if state.home}}active{{/if}}' href='/'>Home</a></li>     
-          <li><a class='{{#if state.shop}}active{{/if}}' href='/shop'>Shop</a></li>
-          <li><a class='{{#if state.contact}}active{{/if}}' href='/contact'>Contact</a></li>
-          {{!-- cart.js puts the number of items into data-cart-count --}}
-          <li><a class='{{#if state.cart}}active{{/if}}' href='/cart'>Cart (<span data-cart-count>0</span>)</a></li>
+<header class="site-header container-fluid px-3 px-md-5 py-3">
 
-     </ul>
-</nav>
+  <div class="d-flex justify-content-between align-items-center">
+
+    <!-- Hamburger menu -->
+    <button
+      class="hamburger-btn"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#sideMenu"
+      aria-controls="sideMenu"
+      aria-label="Open menu"
+    >
+      <i class="bi bi-list"></i>
+    </button>
+
+    <!-- Right icons -->
+    <div class="d-flex align-items-center gap-2 gap-md-3">
+
+      <a href="/shop"
+         class="round-icon"
+         aria-label="Search products">
+        <i class="bi bi-search"></i>
+      </a>
+
+      <div class="dropdown">
+        <button
+          class="round-icon"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          aria-label="Profile"
+        >
+          <i class="bi bi-person"></i>
+        </button>
+
+        <div class="dropdown-menu dropdown-menu-end p-3">
+          <p class="mb-0 text-secondary">
+            Profile feature coming soon.
+          </p>
+        </div>
+      </div>
+
+      <a href="/cart"
+         class="round-icon position-relative"
+         aria-label="Shopping cart">
+        <i class="bi bi-cart3"></i>
+
+        <span class="cart-count"
+              data-cart-count>0</span>
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- Bootstrap left sidebar -->
+<div
+  class="offcanvas offcanvas-start"
+  tabindex="-1"
+  id="sideMenu"
+  aria-labelledby="sideMenuLabel"
+>
+
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="sideMenuLabel">
+      CactuShop
+    </h5>
+
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close menu">
+    </button>
+  </div>
+
+  <div class="offcanvas-body">
+
+    <nav class="d-flex flex-column gap-3">
+
+      <a href="/">Home</a>
+      <a href="/shop">Shop</a>
+      <a href="/shop?category=Tall">Tall Cactuses</a>
+      <a href="/shop?category=Round">Round Cactuses</a>
+      <a href="/shop?category=Sharp">Sharp Cactuses</a>
+      <a href="/shop?category=Columnar">Columnar Cactuses</a>
+      <a href="/contact">Contact</a>
+
+    </nav>
+
+  </div>
+</div>

@@ -1,97 +1,13 @@
 
-<main class="home-page">
+<main class="container">
 
-  <!-- Large logo and shop name -->
-  <section class="brand-hero">
-    <img
-      class="hero-logo"
-      src="/images/cactushop-logo.svg"
-      alt="Cactus with a pink flower"
-    >
+    {{> home/_hero}}
 
-    <h1>CactuShop</h1>
-    <p class="tagline">Grow Green. Live Happy.</p>
-  </section>
+    {{> home/_categories}}
+    
 
-  <!-- Cactus types -->
-  <section class="category-section">
-    <div class="category-grid">
+    {{> home/_welcome}}
 
-      <a href="/shop?category=Tall" class="category-card">
-        <img src="/images/products/columnar.svg" alt="Tall cactus">
-        <h2>Tall</h2>
-      </a>
-
-      <a href="/shop?category=Round" class="category-card">
-        <img src="/images/products/barrel.svg" alt="Round cactus">
-        <h2>Round</h2>
-      </a>
-
-      <a href="/shop?category=Sharp" class="category-card">
-        <img src="/images/products/aloe.svg" alt="Sharp succulent">
-        <h2>Sharp</h2>
-      </a>
-
-      <a href="/shop?category=Columnar" class="category-card">
-        <img src="/images/products/saguaro.svg" alt="Columnar cactus">
-        <h2>Columnar</h2>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- Information about CactuShop -->
-  <section class="welcome-section">
-
-    <div class="welcome-copy">
-      <h2>Bring Nature Closer to You</h2>
-
-      <p>
-        Welcome to CactuShop! Discover our beautiful
-        collection of cactuses, perfect for bringing
-        a little nature into your home.
-      </p>
-
-      <p>
-        From small round cactuses to tall desert plants,
-        find the perfect green companion for your space.
-      </p>
-
-      <a href="/shop" class="shop-button">
-        Shop Now &rarr;
-      </a>
-    </div>
-
-    <div class="welcome-image">
-      <img
-        src="/images/products/pink-flower.svg"
-        alt="Beautiful flowering cactus"
-      >
-    </div>
-
-  </section>
-
-  <!-- Why choose the shop -->
-  <section class="why-us">
-    <h2>Why Choose Us?</h2>
-
-    <div class="benefits">
-      <div class="benefit">
-        <span>🌿</span>
-        <h3>Quality Plants</h3>
-      </div>
-
-      <div class="benefit">
-        <span>🌸</span>
-        <h3>Beautiful Collection</h3>
-      </div>
-
-      <div class="benefit">
-        <span>♡</span>
-        <h3>Plant Care Tips</h3>
-      </div>
-    </div>
-
-  </section>
+    {{> home/_why-us}}
 
 </main>
