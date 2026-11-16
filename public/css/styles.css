@@ -1,36 +1,248 @@
-html,
+
+/* ==============================
+   CACTUSHOP - GENERAL STYLES
+============================== */
+
+:root {
+    --green: #315B3C;
+    --dark-green: #23452D;
+    --sage: #8BAE75;
+    --cream: #F5EBDD;
+    --pink: #EFA6A0;
+    --light-pink: #F9E5E1;
+    --yellow: #E9B95E;
+    --terracotta: #D97955;
+    --white: #FFFFFF;
+    --text: #493C32;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    width: 90%;
-    margin: 0 auto;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    background-color: var(--white);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: var(--dark-green);
+    font-family: Georgia, serif;
+}
+
+p {
+    color: var(--text);
+}
+
+a {
+    color: var(--green);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--terracotta);
+}
+
+/* ==============================
+   NAVIGATION
+============================== */
+
+nav {
+    background-color: var(--cream);
+    padding: 20px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+nav::before {
+    content: "🌵 CactuShop";
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--green);
 }
 
 nav ul {
     list-style: none;
-    padding-left: 0;
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
 }
 
 nav li {
     display: inline;
-
 }
 
-.active {
-    color: white;
-    background-color: green;
-    padding: 0.5em;
+nav ul li a {
+    color: var(--dark-green);
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 25px;
 }
 
 nav ul li a:hover {
-    color: white;
-    background-color: rgb(100, 0, 27);
+    background-color: var(--pink);
+    color: var(--dark-green);
 }
 
-p {
-    color: blue;
+nav ul li a.active {
+    background-color: var(--green);
+    color: var(--white);
 }
 
+/* ==============================
+   MAIN CONTENT
+============================== */
 
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
 
+main h1 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
 
+main p {
+    font-size: 16px;
+}
 
+/* ==============================
+   BUTTONS
+============================== */
+
+button,
+.button {
+    background-color: var(--green);
+    color: var(--white);
+    border: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover,
+.button:hover {
+    background-color: var(--terracotta);
+    color: var(--white);
+}
+
+/* ==============================
+   PRODUCT CARDS
+============================== */
+
+main:has(> article) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+main:has(> article) > h1 {
+    grid-column: 1 / -1;
+}
+
+article {
+    background-color: var(--cream);
+    padding: 18px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+article img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+article h2 {
+    color: var(--green);
+}
+
+article p {
+    color: var(--text);
+}
+
+/* ==============================
+   PRODUCT DETAIL
+============================== */
+
+main > article:only-child {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* ==============================
+   CART
+============================== */
+
+#cart-items {
+    display: grid;
+    gap: 20px;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    background-color: var(--dark-green);
+    color: var(--white);
+    text-align: center;
+    padding: 25px;
+    margin-top: auto;
+}
+
+footer p {
+    color: var(--cream);
+    margin: 0;
+}
+
+/* ==============================
+   MOBILE RESPONSIVE DESIGN
+============================== */
+
+@media (max-width: 650px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        padding: 8px 10px;
+    }
+
+    main {
+        width: 92%;
+        padding: 30px 0;
+    }
+
+    main h1 {
+        font-size: 30px;
+    }
+
+    article img {
+        height: 200px;
+    }
+}
