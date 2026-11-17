@@ -46,34 +46,8 @@
    CACTUSHOP LOGO
 ========================================= */
 
-.shop-page .shop-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(42px, 6vw, 80px);
-    font-weight: bold;
-
-    letter-spacing: -2px;
-    line-height: 1;
-
-    color: var(--shop-green);
-    white-space: nowrap;
-}
-
-/* Cactus image replacing the letter O */
-
-.shop-page .shop-logo-cactus {
-    width: 0.7em;
-    height: 0.9em;
-
-    object-fit: contain;
-
-    margin-left: -0.04em;
-    margin-right: -0.04em;
-
-    vertical-align: middle;
+.shop-page .cactushop-logo {
+    font-size: clamp(40px, 6vw, 80px);
 }
 
 

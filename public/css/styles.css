@@ -418,6 +418,54 @@ button:focus-visible {
 
 }
 
+/* =========================================
+   CACTUSHOP SHARED LOGO
+========================================= */
+
+.cactushop-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 7vw, 100px);
+    font-weight: bold;
+
+    letter-spacing: -2px;
+    line-height: 1;
+
+    color: #245D3A;
+    white-space: nowrap;
+}
+
+.cactushop-logo:hover {
+    color: #245D3A;
+}
+
+/* Cactus replacing the letter O */
+
+.logo-cactus {
+    display: block;
+
+    width: 0.7em;
+    height: 0.9em;
+
+    object-fit: contain;
+
+    margin-left: -0.04em;
+    margin-right: -0.04em;
+}
+
+/* Mobile */
+
+@media (max-width: 576px) {
+    .cactushop-logo {
+        font-size: clamp(35px, 9vw, 52px);
+        letter-spacing: -1px;
+    }
+}
+
+
 
 /* =========================================
    ACCESSIBILITY

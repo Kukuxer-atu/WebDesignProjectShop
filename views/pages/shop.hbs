@@ -1,10 +1,13 @@
 
 <main class="shop-page container-fluid px-3 px-md-4 px-xl-5">
 
-    {{> _shopHero}}
+    {{!-- Shop heading and logo --}}
+    {{> shop/_shopHero}}
 
-    {{> _shopFilters}}
+    {{!-- Category filters --}}
+    {{> shop/_shopFilters}}
 
+    {{!-- Product grid --}}
     <section class="shop-products py-4">
 
         {{#if products.length}}
@@ -15,7 +18,7 @@
                 {{#each products}}
 
                     <div class="col">
-                        {{> _shopProductCard}}
+                        {{> shop/_shopProductCard}}
                     </div>
 
                 {{/each}}
@@ -25,10 +28,14 @@
         {{else}}
 
             <div class="text-center py-5">
+
                 <h2>No cactuses found</h2>
-                <a href="/shop" class="btn btn-success rounded-pill">
+
+                <a href="/shop"
+                   class="btn btn-success rounded-pill">
                     View All Cactuses
                 </a>
+
             </div>
 
         {{/if}}

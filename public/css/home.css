@@ -13,34 +13,6 @@
     text-align: center;
 }
 
-/* Main CactuShop logo */
-
-.cactushop-logo {
-    margin: 0;
-
-    color: var(--green);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(40px, 8vw, 110px);
-    font-weight: bold;
-    letter-spacing: -3px;
-    line-height: 1.2;
-    white-space: nowrap;
-}
-
-/* PNG cactus replacing the letter "o" */
-
-.logo-cactus-o {
-    display: inline-block;
-
-    width: 0.72em;
-    height: 0.9em;
-
-    object-fit: contain;
-    flex-shrink: 0;
-
-    margin: 0 -0.03em;
-    transform: translateY(-0.06em);
-}
 
 /* Tagline under the logo */
 

@@ -1,165 +1,353 @@
+
 require("dotenv").config();
+
+const path = require("path");
 const express = require("express");
 const exphbs = require("express-handlebars");
+const session = require("express-session");
+
+const passport = require("./config/passport");
+const authRoutes = require("./routes/auth");
 
 const products = require("./data/products.json");
 
 const app = express();
 
-const session = require("express-session");
-const passport = require("./config/passport");
-const authRoutes = require("./routes/auth");
+const PORT = process.env.PORT || 3000;
 
-app.use(session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-        httpOnly: true,
-        sameSite: "lax",
-        secure: process.env.NODE_ENV === "production",
-        maxAge: 24 * 60 * 60 * 1000
-    }
-}));
 
-app.use(passport.initialize());
-app.use(passport.session());
-
-app.use("/auth", authRoutes);
-
-app.use((req, res, next) => {
-    res.locals.user = req.user || null;
-    next();
-});
-
-const PORT = 3000;
-
-// Configure Handlebars
+/* =========================================
+   HANDLEBARS CONFIGURATION
+========================================= */
 
 app.engine(
     "hbs",
     exphbs.engine({
         extname: ".hbs",
+
         defaultLayout: "default",
-        layoutsDir: "views/layouts",
-        partialsDir: "views/partials",
+
+        layoutsDir: path.join(
+            __dirname,
+            "views/layouts"
+        ),
+
+        partialsDir: path.join(
+            __dirname,
+            "views/partials"
+        ),
 
         helpers: {
-            euro: (amount) => "€" + Number(amount).toFixed(2)
+            euro: (amount) =>
+                "€" + Number(amount).toFixed(2)
+        }
+    })
+);
+
+app.set("view engine", "hbs");
+
+app.set(
+    "views",
+    path.join(__dirname, "views")
+);
+
+
+/* =========================================
+   STATIC FILES
+========================================= */
+
+app.use(
+    express.static(
+        path.join(__dirname, "public")
+    )
+);
+
+
+/* =========================================
+   SESSION CONFIGURATION
+========================================= */
+
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+
+        resave: false,
+
+        saveUninitialized: false,
+
+        cookie: {
+            httpOnly: true,
+            sameSite: "lax",
+
+            secure:
+                process.env.NODE_ENV === "production",
+
+            maxAge: 24 * 60 * 60 * 1000
         }
     })
 );
 
 
-app.set("view engine", "hbs");
-app.set("views", "views");
+/* =========================================
+   PASSPORT AUTHENTICATION
+========================================= */
 
-// Static CSS, JS and images
-app.use(express.static("public"));
+app.use(passport.initialize());
+app.use(passport.session());
 
+
+/* =========================================
+   AUTHENTICATION ROUTES
+========================================= */
+
+app.use("/auth", authRoutes);
+
+
+/* =========================================
+   USER AVAILABLE IN ALL TEMPLATES
+========================================= */
+
+app.use((req, res, next) => {
+
+    res.locals.user = req.user || null;
+
+    next();
+
+});
+
+
+/* =========================================
+   HOME PAGE
+========================================= */
 
 app.get("/", (req, res) => {
-  res.render("index", {
-    head: { title: "Home | CactuShop" },
-    state: { home: true },
-    pageCss: "home.css"
-  });
+
+    res.render("pages/index", {
+
+        head: {
+            title: "Home | CactuShop"
+        },
+
+        state: {
+            home: true
+        },
+
+        pageCss: "home.css"
+
+    });
+
 });
 
 
-// Shop page with category filtering
+/* =========================================
+   SHOP PAGE
+========================================= */
+
 app.get("/shop", (req, res) => {
 
-  const category = req.query.category;
+    const categoryNames = [
+        "Tall",
+        "Round",
+        "Sharp",
+        "Columnar"
+    ];
 
-  let filteredProducts = products;
+    const requestedCategory =
+        req.query.category;
 
-  if (category) {
-    filteredProducts = products.filter(
-      (product) => product.category === category
-    );
-  }
+    const selectedCategory =
+        categoryNames.includes(requestedCategory)
+            ? requestedCategory
+            : "";
 
-  res.render("shop", {
-    head: { title: "Shop | CactuShop" },
-    state: { shop: true },
-    products: filteredProducts,
-    pageCss: "shop.css",
-  });
+    const filteredProducts =
+        selectedCategory
+            ? products.filter(
+                product =>
+                    product.category === selectedCategory
+            )
+            : products;
+
+    const categories = categoryNames.map(name => ({
+        name: name,
+
+        url:
+            "/shop?category=" +
+            encodeURIComponent(name),
+
+        active:
+            name === selectedCategory
+    }));
+
+    res.render("pages/shop", {
+
+        head: {
+            title: "Shop | CactuShop"
+        },
+
+        state: {
+            shop: true
+        },
+
+        pageCss: "shop.css",
+
+        products: filteredProducts,
+
+        categories: categories,
+
+        selectedCategory: selectedCategory
+
+    });
 
 });
 
-// Individual product page
+
+/* =========================================
+   PRODUCT DETAILS
+========================================= */
+
 app.get("/product/:id", (req, res) => {
 
-  const product = products.find(
-    (item) => item.id === req.params.id
-  );
+    const product = products.find(
+        item => item.id === req.params.id
+    );
 
-  if (!product) {
-    return res.status(404).render("404", {
-      head: { title: "Product Not Found | CactuShop" }
+    if (!product) {
+
+        return res.status(404).render(
+            "pages/404",
+            {
+                head: {
+                    title:
+                        "Product Not Found | CactuShop"
+                }
+            }
+        );
+
+    }
+
+    res.render("pages/product", {
+
+        head: {
+            title: product.name + " | CactuShop"
+        },
+
+        state: {
+            shop: true
+        },
+
+        product: product
+
     });
-  }
-
-  res.render("product", {
-    head: { title: product.name + " | CactuShop" },
-    product
-  });
 
 });
-// profile 
+
+
+/* =========================================
+   USER PROFILE
+========================================= */
+
 app.get("/profile", (req, res) => {
+
     if (!req.isAuthenticated()) {
         return res.redirect("/");
     }
 
-    res.render("profile", {
+    res.render("pages/profile", {
+
         head: {
             title: "My Profile | CactuShop"
         },
-        pageCss: "profile.css"
+
+        pageCss: "profile.css",
+
+        state: {
+            profile: true
+        }
+
     });
+
 });
 
 
-// Shopping cart
+/* =========================================
+   SHOPPING CART
+========================================= */
+
 app.get("/cart", (req, res) => {
-  res.render("cart", {
-    head: { title: "Cart | CactuShop" },
-    state: { cart: true }
-  });
+
+    res.render("pages/cart", {
+
+        head: {
+            title: "Cart | CactuShop"
+        },
+
+        state: {
+            cart: true
+        }
+
+    });
+
 });
 
-// Contact page
+
+/* =========================================
+   CONTACT PAGE
+========================================= */
+
 app.get("/contact", (req, res) => {
-  res.render("contact", {
-    head: { title: "Contact | CactuShop" }
-  });
+
+    res.render("pages/contact", {
+
+        head: {
+            title: "Contact | CactuShop"
+        },
+
+        state: {
+            contact: true
+        }
+
+    });
+
 });
 
-// Checkout page
-app.get("/checkout", (req, res) => {
-  res.render("checkout", {
-    head: { title: "Checkout | CactuShop" }
-  });
-});
 
-// API for cart JavaScript
+/* =========================================
+   PRODUCT API
+========================================= */
+
 app.get("/api/products", (req, res) => {
-  res.json(products);
+
+    res.json(products);
+
 });
 
-// 404 page
+
+/* =========================================
+   404 PAGE
+========================================= */
+
 app.use((req, res) => {
-  res.status(404).render("404", {
-    head: { title: "Page Not Found | CactuShop" }
-  });
+
+    res.status(404).render("pages/404", {
+
+        head: {
+            title: "Page Not Found | CactuShop"
+        }
+
+    });
+
 });
 
-// Start server
+
+/* =========================================
+   START SERVER
+========================================= */
+
 app.listen(PORT, () => {
-  console.log(
-    "CactuShop is running at http://localhost:" + PORT
-  );
+
+    console.log(
+        `CactuShop running at http://localhost:${PORT}`
+    );
+
 });

@@ -4,63 +4,108 @@
     "id": "1",
     "name": "Pink Flower Cactus",
     "category": "Round",
-    "description": "A beautiful small cactus with pink flowers, perfect for brightening up your room.",
+    "description": "A cheerful round cactus with beautiful pink flowers. Perfect for adding a touch of colour to your home.",
     "price": 14.99,
-    "image": "/images/products/pink-flower.svg",
-    "alt": "Round cactus with pink flowers"
+    "image": "/images/products/pink-flower.webp",
+    "alt": "Round green cactus with pink flowers"
   },
   {
     "id": "2",
     "name": "Barrel Cactus",
     "category": "Round",
-    "description": "A classic round cactus with golden spines.",
+    "description": "A classic round barrel cactus with golden spines. A wonderful addition to any cactus collection.",
     "price": 16.99,
-    "image": "/images/products/barrel.svg",
-    "alt": "Green barrel cactus"
+    "image": "/images/products/barrel.webp",
+    "alt": "Green barrel cactus in a pot"
   },
   {
     "id": "3",
     "name": "Opuntia",
     "category": "Sharp",
-    "description": "A prickly pear cactus with rounded green pads.",
+    "description": "A beautiful prickly pear cactus with rounded green pads and a unique desert appearance.",
     "price": 13.99,
-    "image": "/images/products/opuntia.svg",
-    "alt": "Opuntia prickly pear cactus"
+    "image": "/images/products/saguaro.webp",
+    "alt": "Green cactus with branching arms"
   },
   {
     "id": "4",
     "name": "Aloe Vera",
     "category": "Sharp",
-    "description": "A lovely green succulent with pointed leaves.",
+    "description": "A lovely green succulent with long pointed leaves. An attractive and easy-care indoor plant.",
     "price": 15.99,
-    "image": "/images/products/aloe.svg",
-    "alt": "Aloe vera plant"
+    "image": "/images/products/aloe.webp",
+    "alt": "Aloe vera succulent with pointed green leaves"
   },
   {
     "id": "5",
     "name": "Echinocactus",
     "category": "Round",
-    "description": "A decorative round cactus with thick ribs.",
+    "description": "A decorative round cactus with prominent ribs and a beautiful symmetrical shape.",
     "price": 17.99,
-    "image": "/images/products/echinocactus.svg",
-    "alt": "Round echinocactus"
+    "image": "/images/products/echinocactus.webp",
+    "alt": "Round ribbed green cactus"
   },
   {
     "id": "6",
     "name": "Columnar Cactus",
     "category": "Columnar",
-    "description": "A tall and elegant cactus for your home.",
+    "description": "A tall and elegant cactus with an upright shape. Perfect for modern interiors.",
     "price": 16.99,
-    "image": "/images/products/columnar.svg",
-    "alt": "Tall columnar cactus"
+    "image": "/images/products/columnar.webp",
+    "alt": "Tall upright green cactus"
   },
   {
     "id": "7",
     "name": "Tall Saguaro",
     "category": "Tall",
-    "description": "A beautiful tall cactus with branching arms.",
+    "description": "A desert-inspired cactus with a tall trunk and distinctive branching arms.",
     "price": 19.99,
-    "image": "/images/products/saguaro.svg",
-    "alt": "Tall branching saguaro cactus"
+    "image": "/images/products/tallSaguaro.webp",
+    "alt": "Tall saguaro cactus with branching arms"
+  },
+  {
+    "id": "8",
+    "name": "Golden Barrel Cactus",
+    "category": "Round",
+    "description": "A beautiful round cactus with golden spines and a striking desert appearance.",
+    "price": 18.99,
+    "image": "/images/products/goldenBarrelCactus.webp",
+    "alt": "Golden barrel cactus in a pot"
+  },
+  {
+    "id": "9",
+    "name": "Mini Flower Cactus",
+    "category": "Round",
+    "description": "A compact flowering cactus that brings a cheerful splash of pink to desks and windowsills.",
+    "price": 12.99,
+    "image": "/images/products/miniFlowerCactus.webp",
+    "alt": "Small round cactus with a pink flower"
+  },
+  {
+    "id": "10",
+    "name": "Bunny Ear Opuntia",
+    "category": "Sharp",
+    "description": "A charming prickly pear cactus known for its rounded pads and playful shape.",
+    "price": 15.99,
+    "image": "/images/products/bunnyEarOpuntia.webp",
+    "alt": "Green branching cactus"
+  },
+  {
+    "id": "11",
+    "name": "Star Aloe",
+    "category": "Sharp",
+    "description": "An attractive succulent with pointed leaves arranged in a beautiful star-like shape.",
+    "price": 14.99,
+    "image": "/images/products/starAloe.webp",
+    "alt": "Green aloe succulent with pointed leaves"
+  },
+  {
+    "id": "12",
+    "name": "Mini Columnar Cactus",
+    "category": "Columnar",
+    "description": "A compact upright cactus with a sculptural shape. Ideal for shelves and small spaces.",
+    "price": 17.99,
+    "image": "/images/products/miniColumnarCactus.webp",
+    "alt": "Small columnar cactus growing upright"
   }
 ]
