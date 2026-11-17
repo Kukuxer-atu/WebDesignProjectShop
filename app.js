@@ -1,10 +1,37 @@
-
+require("dotenv").config();
 const express = require("express");
 const exphbs = require("express-handlebars");
 
 const products = require("./data/products.json");
 
 const app = express();
+
+const session = require("express-session");
+const passport = require("./config/passport");
+const authRoutes = require("./routes/auth");
+
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        httpOnly: true,
+        sameSite: "lax",
+        secure: process.env.NODE_ENV === "production",
+        maxAge: 24 * 60 * 60 * 1000
+    }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use("/auth", authRoutes);
+
+app.use((req, res, next) => {
+    res.locals.user = req.user || null;
+    next();
+});
+
 const PORT = 3000;
 
 // Configure Handlebars
@@ -80,6 +107,20 @@ app.get("/product/:id", (req, res) => {
   });
 
 });
+// profile 
+app.get("/profile", (req, res) => {
+    if (!req.isAuthenticated()) {
+        return res.redirect("/");
+    }
+
+    res.render("profile", {
+        head: {
+            title: "My Profile | CactuShop"
+        },
+        pageCss: "profile.css"
+    });
+});
+
 
 // Shopping cart
 app.get("/cart", (req, res) => {

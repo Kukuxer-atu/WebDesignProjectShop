@@ -112,13 +112,20 @@ button:focus-visible {
 
 /* Search, profile and cart */
 
+
 .round-icon {
     width: 56px;
     height: 56px;
+    min-width: 56px;
+    min-height: 56px;
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
+
+    padding: 0;
+    box-sizing: border-box;
 
     background-color: var(--green);
     color: var(--white);
@@ -130,6 +137,7 @@ button:focus-visible {
     line-height: 1;
 
     text-decoration: none;
+    cursor: pointer;
 
     transition:
         background-color 0.2s ease,
@@ -139,9 +147,9 @@ button:focus-visible {
 .round-icon:hover {
     background-color: var(--medium-green);
     color: var(--white);
-
     transform: scale(1.05);
 }
+
 
 /* Cart item counter */
 
@@ -312,7 +320,8 @@ button:focus-visible {
     .round-icon {
         width: 49px;
         height: 49px;
-
+        min-width: 49px;
+        min-height: 49px;
         font-size: 22px;
     }
 
@@ -353,10 +362,11 @@ button:focus-visible {
 
     /* Header icons */
 
-    .round-icon {
+     .round-icon {
         width: 43px;
         height: 43px;
-
+        min-width: 43px;
+        min-height: 43px;
         font-size: 19px;
     }
 
