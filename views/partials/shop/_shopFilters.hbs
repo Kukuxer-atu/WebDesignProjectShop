@@ -1,0 +1,23 @@
+
+<nav class="shop-filters
+            d-flex flex-wrap justify-content-center
+            gap-2 gap-md-3 p-3"
+     aria-label="Filter products by category">
+
+    <a href="/shop"
+       class="shop-filter {{#unless selectedCategory}}active{{/unless}}"
+       {{#unless selectedCategory}}aria-current="page"{{/unless}}>
+        All
+    </a>
+
+    {{#each categories}}
+
+        <a href="{{url}}"
+           class="shop-filter {{#if active}}active{{/if}}"
+           {{#if active}}aria-current="page"{{/if}}>
+            {{name}}
+        </a>
+
+    {{/each}}
+
+</nav>

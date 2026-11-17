@@ -83,7 +83,8 @@ app.get("/shop", (req, res) => {
   res.render("shop", {
     head: { title: "Shop | CactuShop" },
     state: { shop: true },
-    products: filteredProducts
+    products: filteredProducts,
+    pageCss: "shop.css",
   });
 
 });

@@ -1,19 +1,6 @@
-// cart.js - a simple shopping cart that lives in the browser's localStorage.
-//
-// The cart is saved as a list of { id, qty } objects, for example:
-//   [ { "id": "1", "qty": 2 }, { "id": "4", "qty": 1 } ]
-// Only ids and quantities are stored. Names, prices and images are looked
-// up from /api/products, so they always match products.json.
-//
-// You do NOT need to change this file to style your cart.
-// To change how a cart row looks, edit cartItemHTML() and cartSummaryHTML()
-// below, or just style the class names they use in your CSS.
 
 const CART_KEY = 'cart';
 
-// ---------- HTML templates: change these to restyle the cart page ----------
-
-// HTML for one row in the cart. "product" comes from products.json.
 function cartItemHTML(product, qty) {
   return `
     <li class="cart-item">

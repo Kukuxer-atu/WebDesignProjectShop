@@ -1,0 +1,138 @@
+
+<header class="site-header container-fluid px-3 px-md-5 py-3">
+
+  <div class="d-flex justify-content-between align-items-center">
+
+    <!-- Hamburger menu -->
+    <button
+      class="hamburger-btn"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#sideMenu"
+      aria-controls="sideMenu"
+      aria-label="Open menu"
+    >
+      <i class="bi bi-list"></i>
+    </button>
+
+    <!-- Right icons -->
+    <div class="d-flex align-items-center gap-2 gap-md-3">
+
+      <!-- Search -->
+      <a href="/shop"
+         class="round-icon"
+         aria-label="Search products">
+        <i class="bi bi-search"></i>
+      </a>
+
+      <!-- Profile -->
+      {{#if user}}
+
+        <!-- Logged in: open profile page -->
+        <a href="/profile"
+           class="round-icon profile-avatar-link"
+           aria-label="My profile">
+
+          {{#if user.photo}}
+            <img
+              src="{{user.photo}}"
+              alt="My profile"
+              class="profile-avatar"
+              referrerpolicy="no-referrer"
+            >
+          {{else}}
+            <i class="bi bi-person-fill"></i>
+          {{/if}}
+
+        </a>
+
+      {{else}}
+
+        <!-- Guest: Google login dropdown -->
+        <div class="dropdown">
+
+          <button
+            class="round-icon"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            aria-label="Sign in"
+          >
+            <i class="bi bi-person"></i>
+          </button>
+
+          <div class="dropdown-menu dropdown-menu-end p-3 profile-dropdown">
+
+            <h6 class="text-center">
+              Welcome to CactuShop 🌵
+            </h6>
+
+            <p class="small text-muted text-center">
+              Sign in using your Google account.
+            </p>
+
+            <a href="/auth/google" class="btn btn-success w-100">
+              Continue with Google
+            </a>
+
+            <small class="d-block mt-2 text-muted text-center">
+              Or continue shopping as a guest
+            </small>
+
+          </div>
+
+        </div>
+
+      {{/if}}
+
+      <!-- Cart -->
+      <a href="/cart"
+         class="round-icon position-relative"
+         aria-label="Shopping cart">
+
+        <i class="bi bi-cart3"></i>
+
+        <span class="cart-count" data-cart-count>0</span>
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- Bootstrap left sidebar -->
+<div
+  class="offcanvas offcanvas-start"
+  tabindex="-1"
+  id="sideMenu"
+  aria-labelledby="sideMenuLabel"
+>
+
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="sideMenuLabel">
+      CactuShop
+    </h5>
+
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close menu">
+    </button>
+  </div>
+
+  <div class="offcanvas-body">
+    <nav class="d-flex flex-column gap-3">
+
+      <a href="/">Home</a>
+      <a href="/shop">Shop</a>
+      <a href="/shop?category=Tall">Tall Cactuses</a>
+      <a href="/shop?category=Round">Round Cactuses</a>
+      <a href="/shop?category=Sharp">Sharp Cactuses</a>
+      <a href="/shop?category=Columnar">Columnar Cactuses</a>
+      <a href="/contact">Contact</a>
+
+    </nav>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+
+<article class="shop-card h-100 d-flex flex-column">
+
+    <!-- Product content -->
+    <a href="/product/{{id}}"
+       class="shop-card-link">
+
+        <div class="shop-card-content">
+
+            <!-- Cactus image -->
+            <div class="shop-card-image">
+
+                <img src="{{image}}"
+                     alt="{{alt}}"
+                     loading="lazy">
+
+            </div>
+
+            <!-- Details -->
+            <div class="shop-card-details">
+
+                <h2 class="shop-card-name">
+                    {{name}}
+                </h2>
+
+                <p class="shop-card-price">
+                    {{euro price}}
+                </p>
+
+            </div>
+
+        </div>
+
+    </a>
+
+    <!-- Cart button -->
+    <div class="shop-card-bottom mt-auto">
+
+        <button type="button"
+                class="btn shop-add-btn w-100"
+                data-add-to-cart="{{id}}"
+                aria-label="Add {{name}} to cart">
+
+            <i class="bi bi-bag-plus"
+               aria-hidden="true"></i>
+
+            Add to Cart
+
+        </button>
+
+        <p class="shop-cart-message"
+           data-cart-message
+           aria-live="polite"></p>
+
+    </div>
+
+</article>

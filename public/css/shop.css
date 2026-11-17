@@ -1,0 +1,624 @@
+
+/* =========================================
+   CACTUSHOP - SHOP PAGE STYLES
+========================================= */
+
+
+/* =========================================
+   SHOP COLOUR PALETTE
+========================================= */
+
+.shop-page {
+    --shop-green: #245D3A;
+    --shop-medium-green: #397C50;
+    --shop-light-green: #EEF4E9;
+
+    --shop-pink: #EA8DA8;
+    --shop-light-pink: #FCE9EF;
+
+    --shop-cream: #FBFAF5;
+    --shop-white: #FFFFFF;
+
+    --shop-text: #263D2D;
+
+    width: 100%;
+    max-width: 1550px;
+    margin: 0 auto;
+
+    padding-bottom: 70px;
+
+    color: var(--shop-text);
+}
+
+
+/* =========================================
+   SHOP HERO SECTION
+========================================= */
+
+.shop-page .shop-hero {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+
+/* =========================================
+   CACTUSHOP LOGO
+========================================= */
+
+.shop-page .shop-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 6vw, 80px);
+    font-weight: bold;
+
+    letter-spacing: -2px;
+    line-height: 1;
+
+    color: var(--shop-green);
+    white-space: nowrap;
+}
+
+/* Cactus image replacing the letter O */
+
+.shop-page .shop-logo-cactus {
+    width: 0.7em;
+    height: 0.9em;
+
+    object-fit: contain;
+
+    margin-left: -0.04em;
+    margin-right: -0.04em;
+
+    vertical-align: middle;
+}
+
+
+/* =========================================
+   SHOP TITLE AND SUBTITLE
+========================================= */
+
+.shop-page .shop-title {
+    color: var(--shop-green);
+
+    font-size: clamp(22px, 2.5vw, 28px);
+    font-weight: 700;
+
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.shop-page .shop-subtitle {
+    color: #718674;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   CATEGORY FILTER CONTAINER
+========================================= */
+
+.shop-page .shop-filters {
+    margin-bottom: 25px;
+
+    padding: 16px;
+
+    background: rgba(238, 244, 233, 0.55);
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 25px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 5px 20px rgba(36, 93, 58, 0.04);
+}
+
+
+/* =========================================
+   CATEGORY FILTER BUTTONS
+========================================= */
+
+.shop-page .shop-filter {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 85px;
+
+    padding: 10px 20px;
+
+    color: var(--shop-green);
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 50px;
+
+    box-shadow:
+        0 3px 10px rgba(36, 93, 58, 0.05);
+
+    transition: all 0.2s ease;
+}
+
+.shop-page .shop-filter:hover {
+    color: var(--shop-green);
+
+    background: var(--shop-light-green);
+
+    transform: translateY(-2px);
+}
+
+/* Selected category */
+
+.shop-page .shop-filter.active {
+    color: var(--shop-white);
+
+    background: var(--shop-green);
+
+    border-color: var(--shop-green);
+
+    box-shadow:
+        0 5px 12px rgba(36, 93, 58, 0.18);
+}
+
+
+/* =========================================
+   PRODUCT GRID SECTION
+========================================= */
+
+.shop-page .shop-products {
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   GLASS PRODUCT CARDS
+========================================= */
+
+.shop-page .shop-card {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+
+    padding: 16px;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    border: 1px solid #E4EBE3;
+    border-radius: 22px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 5px 18px rgba(36, 93, 58, 0.07);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.shop-page .shop-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 28px rgba(36, 93, 58, 0.12);
+}
+
+
+/* =========================================
+   PRODUCT LINK
+========================================= */
+
+.shop-page .shop-card-link {
+    display: block;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+.shop-page .shop-card-link:hover {
+    color: inherit;
+}
+
+
+/* =========================================
+   CARD CONTENT LAYOUT
+========================================= */
+
+.shop-page .shop-card-content {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+/* =========================================
+   PRODUCT IMAGE CONTAINER
+========================================= */
+
+.shop-page .shop-card-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48%;
+    height: 155px;
+
+    flex-shrink: 0;
+
+    padding: 12px;
+
+    background: var(--shop-cream);
+
+    border-radius: 17px;
+}
+
+
+/* PRODUCT IMAGE */
+
+.shop-page .shop-card-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    transition: transform 0.25s ease;
+}
+
+/* Small image animation */
+
+.shop-page .shop-card:hover .shop-card-image img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   PRODUCT INFORMATION
+========================================= */
+
+.shop-page .shop-card-details {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* PRODUCT NAME */
+
+.shop-page .shop-card-name {
+    color: var(--shop-text);
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    margin: 0 0 12px;
+}
+
+
+/* PRODUCT PRICE */
+
+.shop-page .shop-card-price {
+    color: var(--shop-green);
+
+    font-size: 17px;
+    font-weight: 700;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   ADD TO CART SECTION
+========================================= */
+
+.shop-page .shop-card-bottom {
+    margin-top: auto;
+
+    padding-top: 14px;
+}
+
+
+/* ADD TO CART BUTTON */
+
+.shop-page .shop-add-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 7px;
+
+    width: 100%;
+
+    padding: 10px 14px;
+
+    color: var(--shop-green);
+
+    background: rgba(238, 244, 233, 0.75);
+
+    border: 1px solid var(--shop-medium-green);
+    border-radius: 50px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    box-shadow:
+        0 3px 10px rgba(36, 93, 58, 0.05);
+
+    transition: all 0.2s ease;
+}
+
+
+/* Cart icon */
+
+.shop-page .shop-add-btn i {
+    font-size: 16px;
+}
+
+
+/* Button hover */
+
+.shop-page .shop-add-btn:hover {
+    color: var(--shop-white);
+
+    background: var(--shop-green);
+
+    border-color: var(--shop-green);
+
+    transform: translateY(-1px);
+}
+
+
+/* Button press */
+
+.shop-page .shop-add-btn:active {
+    transform: scale(0.97);
+}
+
+
+/* Keyboard accessibility */
+
+.shop-page .shop-add-btn:focus-visible,
+.shop-page .shop-filter:focus-visible {
+    outline: 3px solid var(--shop-pink);
+    outline-offset: 3px;
+}
+
+
+/* =========================================
+   CART FEEDBACK MESSAGE
+========================================= */
+
+.shop-page .shop-cart-message {
+    color: var(--shop-green);
+
+    font-size: 12px;
+    text-align: center;
+
+    margin: 7px 0 0;
+}
+
+.shop-page .shop-cart-message:empty {
+    display: none;
+}
+
+
+/* =========================================
+   EMPTY SHOP MESSAGE
+========================================= */
+
+.shop-page .shop-empty {
+    background: var(--shop-light-green);
+
+    border-radius: 22px;
+
+    padding: 40px;
+    text-align: center;
+}
+
+.shop-page .shop-empty h2 {
+    color: var(--shop-green);
+}
+
+
+/* =========================================
+   DESKTOP LAYOUT
+   992px AND ABOVE
+========================================= */
+
+@media (min-width: 992px) {
+
+    /* Four products per row is handled
+       by Bootstrap row-cols-lg-4 */
+
+    .shop-page .shop-card-content {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .shop-page .shop-card-image {
+        width: 48%;
+        height: 155px;
+    }
+
+}
+
+
+/* =========================================
+   TABLET LAYOUT
+   576px - 991px
+========================================= */
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+
+    /* Three products per row is handled
+       by Bootstrap row-cols-sm-3 */
+
+    .shop-page .shop-card-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .shop-page .shop-card-image {
+        width: 100%;
+        height: 180px;
+    }
+
+    .shop-page .shop-card-name {
+        font-size: 14px;
+    }
+
+    .shop-page .shop-card-price {
+        font-size: 16px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE LAYOUT
+   BELOW 576px
+========================================= */
+
+@media (max-width: 575.98px) {
+
+    .shop-page {
+        padding-bottom: 40px;
+    }
+
+    /* Logo */
+
+    .shop-page .shop-hero {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .shop-page .shop-logo {
+        font-size: clamp(35px, 9vw, 48px);
+        letter-spacing: -1px;
+    }
+
+    .shop-page .shop-title {
+        font-size: 21px;
+        margin-top: 15px;
+    }
+
+    .shop-page .shop-subtitle {
+        font-size: 12px;
+    }
+
+    /* Filters */
+
+    .shop-page .shop-filters {
+        padding: 12px 8px;
+
+        gap: 8px !important;
+
+        border-radius: 18px;
+    }
+
+    .shop-page .shop-filter {
+        min-width: 0;
+
+        padding: 8px 13px;
+
+        font-size: 12px;
+    }
+
+    /* Cards */
+
+    .shop-page .shop-card {
+        padding: 10px;
+
+        border-radius: 17px;
+    }
+
+    .shop-page .shop-card-content {
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 10px;
+    }
+
+    /* Images */
+
+    .shop-page .shop-card-image {
+        width: 100%;
+        height: 135px;
+
+        padding: 8px;
+
+        border-radius: 13px;
+    }
+
+    /* Name */
+
+    .shop-page .shop-card-name {
+        font-size: 12px;
+
+        line-height: 1.3;
+
+        margin-bottom: 7px;
+    }
+
+    /* Price */
+
+    .shop-page .shop-card-price {
+        font-size: 15px;
+    }
+
+    /* Button */
+
+    .shop-page .shop-card-bottom {
+        padding-top: 12px;
+    }
+
+    .shop-page .shop-add-btn {
+        padding: 9px 5px;
+
+        font-size: 11px;
+
+        gap: 5px;
+    }
+
+    .shop-page .shop-add-btn i {
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .shop-page .shop-card,
+    .shop-page .shop-card-image img,
+    .shop-page .shop-add-btn,
+    .shop-page .shop-filter {
+        transition: none;
+    }
+
+}

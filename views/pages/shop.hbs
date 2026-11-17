@@ -1,0 +1,38 @@
+
+<main class="shop-page container-fluid px-3 px-md-4 px-xl-5">
+
+    {{> _shopHero}}
+
+    {{> _shopFilters}}
+
+    <section class="shop-products py-4">
+
+        {{#if products.length}}
+
+            <div class="row row-cols-2 row-cols-sm-3
+                        row-cols-lg-4 g-3 g-xl-4">
+
+                {{#each products}}
+
+                    <div class="col">
+                        {{> _shopProductCard}}
+                    </div>
+
+                {{/each}}
+
+            </div>
+
+        {{else}}
+
+            <div class="text-center py-5">
+                <h2>No cactuses found</h2>
+                <a href="/shop" class="btn btn-success rounded-pill">
+                    View All Cactuses
+                </a>
+            </div>
+
+        {{/if}}
+
+    </section>
+
+</main>
