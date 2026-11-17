@@ -33,24 +33,88 @@
 
     </a>
 
-    <!-- Cart button -->
-    <div class="shop-card-bottom mt-auto">
 
-        <button type="button"
-                class="btn shop-add-btn w-100"
-                data-add-to-cart="{{id}}"
-                aria-label="Add {{name}} to cart">
+    <!-- Animated cart controls -->
+    <div class="shop-card-bottom mt-auto"
+         data-shop-cart
+         data-product-id="{{id}}"
+         data-product-name="{{name}}">
 
-            <i class="bi bi-bag-plus"
-               aria-hidden="true"></i>
+        <div class="shop-cart-action">
 
-            Add to Cart
+            <!-- Initial Add to Cart button -->
+            <button type="button"
+                    class="shop-quick-add"
+                    data-shop-add
+                    aria-label="Add {{name}} to cart">
 
-        </button>
+                <span class="shop-add-label">
+                    <i class="bi bi-bag-plus"
+                       aria-hidden="true"></i>
+                    Add to Cart
+                </span>
 
-        <p class="shop-cart-message"
-           data-cart-message
-           aria-live="polite"></p>
+                <span class="shop-added-label"
+                      aria-hidden="true">
+                    <i class="bi bi-check2"
+                       aria-hidden="true"></i>
+                    Added
+                </span>
+
+            </button>
+
+
+            <!-- Quantity selector -->
+            <div class="shop-qty-panel"
+                 data-shop-qty-panel
+                 aria-hidden="true"
+                 inert>
+
+                <div class="shop-qty-inner">
+
+                    <!-- Decrease -->
+                    <button type="button"
+                            class="shop-qty-btn"
+                            data-shop-minus
+                            aria-label="Decrease quantity of {{name}}">
+
+                        <i class="bi bi-dash"
+                           aria-hidden="true"></i>
+
+                    </button>
+
+                    <!-- Editable quantity -->
+                    <input type="number"
+                           class="shop-qty-input"
+                           data-shop-qty
+                           value="0"
+                           min="0"
+                           max="99"
+                           step="1"
+                           inputmode="numeric"
+                           aria-label="Quantity of {{name}} in cart">
+
+                    <!-- Increase -->
+                    <button type="button"
+                            class="shop-qty-btn"
+                            data-shop-plus
+                            aria-label="Increase quantity of {{name}}">
+
+                        <i class="bi bi-plus"
+                           aria-hidden="true"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Accessible cart announcement -->
+        <span class="visually-hidden"
+              data-shop-status
+              aria-live="polite"></span>
 
     </div>
 
