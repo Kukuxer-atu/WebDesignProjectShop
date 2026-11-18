@@ -1,9 +1,9 @@
 /* =========================================
    CACTUSHOP — HOME PAGE
-   Global colours and shared logo styles are in styles.css.
+   Shared colours and logo styles are in styles.css.
 ========================================= */
 
-/* HERO: centred logo and tagline */
+/* HERO: centre the shared logo and tagline. */
 .main-hero {
     width: 100%;
     text-align: center;
@@ -16,37 +16,112 @@
     letter-spacing: 2px;
 }
 
-/* CATEGORIES: clickable cactus tiles with a gentle lift on hover */
-.category-card {
-    min-height: 215px;
-    padding: 20px;
-    background-color: var(--light-green);
-    border: 1px solid transparent;
-    border-radius: 22px;
-    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+/* =========================================
+   CACTUS CATEGORIES — WOODEN SHELF
+   Desktop/tablet: one shelf beneath all four plants.
+   Mobile: one shelf beneath each pair of plants.
+========================================= */
+
+/* Two groups of two categories form a four-column desktop layout. */
+.category-shelf {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.category-card:hover {
-    background-color: #E1EDDD;
-    border-color: #C6DCC9;
-    transform: translateY(-5px);
+.category-shelf-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: end;
+    min-width: 0;
+    position: relative;
+    z-index: 3; /* Keep the entire cactus row in front of the wooden shelf. */
 }
 
-.category-card img {
+/* The category name appears above its cactus. */
+.shelf-category {
+    position: relative;
+    z-index: 3; /* On mobile, keep each pot above its own shelf. */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    min-width: 0;
+    padding: 8px 6px 0;
+    color: var(--green);
+    text-align: center;
+    text-decoration: none;
+}
+
+.shelf-category-label {
+    padding: 5px 16px;
+    background: var(--light-green);
+    border-radius: 999px;
+    color: var(--green);
+    font-size: 17px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+/* Bigger cactus images, lined up at the bottom.
+   Lower each pot by 14px so it overlaps the shelf's top edge.
+   The shelf remains behind the plant thanks to the stacking order. */
+.shelf-cactus {
+    position: relative;
+    top: 14px;
+    z-index: 3;
     display: block;
     width: 100%;
-    max-width: 155px;
-    height: 140px;
+    max-width: 220px;
+    height: 235px;
     object-fit: contain;
+    object-position: center bottom;
+    transition: transform 0.2s ease;
 }
 
-.category-card h2 {
-    color: var(--green);
-    font-size: 18px;
-    font-weight: 600;
+.shelf-category:hover .shelf-cactus,
+.shelf-category:focus-visible .shelf-cactus {
+    transform: translateY(-7px);
 }
 
-/* WELCOME: promotional text, Shop Now button and featured cactus */
+.shelf-category:hover .shelf-category-label,
+.shelf-category:focus-visible .shelf-category-label {
+    background: var(--light-pink);
+}
+
+.shelf-category:focus-visible {
+    outline-offset: 5px;
+}
+
+/* The shelf is a real grid row immediately below the cactuses.
+   Its aspect ratio matches the cropped image, so it cannot squash.
+   The small negative margin brings the shelf close to the pots;
+   the cactus rows above it stay visually in front. */
+.category-shelf::after {
+    content: "";
+    display: block;
+    grid-column: 1 / -1;
+    width: 100%;
+    aspect-ratio: 1876 / 174;
+    margin-top: -12px;
+    background: url("/images/shelf-wide.webp") center top / 100% auto no-repeat;
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Individual shelves are only needed on mobile. */
+.category-shelf-row::after {
+    content: none;
+}
+
+/* =========================================
+   WELCOME SECTION
+   Promotional copy, Shop Now button and featured cactus.
+========================================= */
 .welcome-section {
     background-color: var(--light-green);
     overflow: hidden;
@@ -77,8 +152,8 @@
 }
 
 .shop-now-btn:hover {
-    background-color: #397C50;
-    border-color: #397C50;
+    background-color: var(--medium-green);
+    border-color: var(--medium-green);
     color: var(--white);
     transform: translateY(-2px);
 }
@@ -95,7 +170,10 @@
     object-fit: contain;
 }
 
-/* WHY CHOOSE US: benefit cards and pink icons */
+/* =========================================
+   WHY CHOOSE US
+   Benefit cards with pink icons.
+========================================= */
 .why-us-section { width: 100%; }
 
 .why-us-title {
@@ -130,10 +208,8 @@
 }
 
 /* =========================================
-   RESPONSIVE LAYOUTS
+   RESPONSIVE — TABLET (577–991px)
 ========================================= */
-
-/* Tablet (577–991px): slightly smaller logo, tiles and welcome content */
 @media (min-width: 577px) and (max-width: 991px) {
     .cactushop-logo {
         font-size: clamp(55px, 8vw, 85px);
@@ -141,24 +217,14 @@
     }
 
     .hero-tagline { font-size: 17px; }
-
-    .category-card {
-        min-height: 190px;
-        padding: 15px;
-    }
-
-    .category-card img {
-        max-width: 130px;
-        height: 120px;
-    }
-
-    .category-card h2 { font-size: 16px; }
+    .shelf-cactus { max-width: 185px; height: 195px; top: 12px; }
+    .shelf-category-label { font-size: 16px; }
     .welcome-section h2 { font-size: 34px; }
     .welcome-section p { font-size: 15px; }
     .welcome-cactus { max-height: 270px; }
 }
 
-/* Why Us starts scaling down on tablet and stays smaller on mobile */
+/* Benefits begin scaling down on tablets. */
 @media (max-width: 991px) {
     .why-us-title { font-size: 26px; }
     .benefit-icon { font-size: 32px; }
@@ -166,14 +232,16 @@
     .benefit-description { font-size: 12px; }
 }
 
-/* Mobile (up to 576px): compact cards, logo and promotional content */
+/* =========================================
+   RESPONSIVE — MOBILE (576px and below)
+========================================= */
 @media (max-width: 576px) {
     .cactushop-logo {
         font-size: clamp(29px, 8vw, 48px);
         letter-spacing: -1px;
     }
 
-    /* Mobile-specific image used as the letter O in some logo markup */
+    /* For the logo variant with a cactus replacing the letter O. */
     .logo-cactus-o {
         width: 0.72em;
         height: 0.9em;
@@ -188,33 +256,37 @@
         letter-spacing: 1px;
     }
 
-    .category-card {
-        min-height: 155px;
-        padding: 12px;
-        border-radius: 16px;
+    /* Stack the two category pairs, then add a shelf to each pair. */
+    .category-shelf {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
     }
 
-    .category-card img {
-        max-width: 120px;
-        height: 105px;
+    .category-shelf::after { content: none; }
+
+    .category-shelf-row::after {
+        content: "";
+        display: block;
+        grid-column: 1 / -1;
+        width: 100%;
+        aspect-ratio: 1876 / 174;
+        margin-top: -8px;
+        background: url("/images/shelf-wide.webp") center top / 100% auto no-repeat;
+        position: relative;
+        z-index: 1;
+        pointer-events: none;
     }
 
-    .category-card h2 { font-size: 15px; }
+    .shelf-category { gap: 8px; padding: 4px 5px 0; }
+    .shelf-cactus { max-width: 155px; height: 155px; top: 10px; }
+    .shelf-category-label { padding: 4px 14px; font-size: 15px; }
+
     .welcome-section h2 { font-size: 29px; }
-
-    .welcome-section p {
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
+    .welcome-section p { font-size: 14px; line-height: 1.6; }
     .shop-now-btn { font-size: 14px; }
+    .welcome-cactus { max-width: 220px; max-height: 220px; }
 
-    .welcome-cactus {
-        max-width: 220px;
-        max-height: 220px;
-    }
-
-    /* Keep benefit text and icons proportional on narrow screens */
     .why-us-title { font-size: 24px; }
     .benefit-card { padding: 10px 4px; }
     .benefit-icon { font-size: 27px; }
@@ -222,9 +294,10 @@
     .benefit-description { font-size: 11px; }
 }
 
-/* Accessibility: respect visitors who prefer less motion */
+/* Accessibility: reduce decorative motion when requested. */
 @media (prefers-reduced-motion: reduce) {
-    .category-card,
+    .shelf-category-label,
+    .shelf-cactus,
     .shop-now-btn {
         transition: none;
     }
