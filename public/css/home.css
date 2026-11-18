@@ -1,20 +1,13 @@
+/* =========================================
+   CACTUSHOP — HOME PAGE
+   Global colours and shared logo styles are in styles.css.
+========================================= */
 
-/* ========================================
-   CACTUSHOP - HOME PAGE
-======================================== */
-
-
-/* ========================================
-   MAIN HERO AND LOGO
-======================================== */
-
+/* HERO: centred logo and tagline */
 .main-hero {
     width: 100%;
     text-align: center;
 }
-
-
-/* Tagline under the logo */
 
 .hero-tagline {
     color: #588265;
@@ -23,28 +16,15 @@
     letter-spacing: 2px;
 }
 
-
-/* ========================================
-   CACTUS CATEGORIES
-======================================== */
-
-/* Category cards */
-
+/* CATEGORIES: clickable cactus tiles with a gentle lift on hover */
 .category-card {
     min-height: 215px;
     padding: 20px;
-
     background-color: var(--light-green);
     border: 1px solid transparent;
     border-radius: 22px;
-
-    transition:
-        transform 0.2s ease,
-        background-color 0.2s ease,
-        border-color 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
-
-/* Hover effect */
 
 .category-card:hover {
     background-color: #E1EDDD;
@@ -52,19 +32,13 @@
     transform: translateY(-5px);
 }
 
-/* Category PNG images */
-
 .category-card img {
     display: block;
-
     width: 100%;
     max-width: 155px;
     height: 140px;
-
     object-fit: contain;
 }
-
-/* Category titles */
 
 .category-card h2 {
     color: var(--green);
@@ -72,17 +46,11 @@
     font-weight: 600;
 }
 
-
-/* ========================================
-   WELCOME SECTION
-======================================== */
-
+/* WELCOME: promotional text, Shop Now button and featured cactus */
 .welcome-section {
     background-color: var(--light-green);
     overflow: hidden;
 }
-
-/* Welcome heading */
 
 .welcome-section h2 {
     color: var(--green);
@@ -92,37 +60,26 @@
     line-height: 1.2;
 }
 
-/* Welcome paragraph */
-
 .welcome-section p {
     max-width: 500px;
-
     color: #4F7059;
     font-size: 17px;
     line-height: 1.7;
 }
 
-/* Shop Now button */
-
 .shop-now-btn {
     background-color: var(--green);
     border-color: var(--green);
-
     color: var(--white);
     font-size: 16px;
     font-weight: 600;
-
-    transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 .shop-now-btn:hover {
     background-color: #397C50;
     border-color: #397C50;
     color: var(--white);
-
     transform: translateY(-2px);
 }
 
@@ -131,36 +88,59 @@
     outline-offset: 3px;
 }
 
-/* Welcome cactus PNG */
-
 .welcome-cactus {
     width: 100%;
     max-width: 320px;
     max-height: 320px;
-
     object-fit: contain;
 }
 
+/* WHY CHOOSE US: benefit cards and pink icons */
+.why-us-section { width: 100%; }
 
-/* ========================================
-   TABLET
-   577px - 991px
-======================================== */
+.why-us-title {
+    color: var(--green);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    font-weight: bold;
+}
 
+.benefit-card {
+    padding: 20px 12px;
+    text-align: center;
+}
+
+.benefit-icon {
+    display: inline-block;
+    color: var(--pink);
+    font-size: 38px;
+    line-height: 1;
+}
+
+.benefit-title {
+    color: var(--green);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.benefit-description {
+    color: #588265;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* =========================================
+   RESPONSIVE LAYOUTS
+========================================= */
+
+/* Tablet (577–991px): slightly smaller logo, tiles and welcome content */
 @media (min-width: 577px) and (max-width: 991px) {
-
-    /* Logo */
-
     .cactushop-logo {
         font-size: clamp(55px, 8vw, 85px);
         letter-spacing: -2px;
     }
 
-    .hero-tagline {
-        font-size: 17px;
-    }
-
-    /* Category cards */
+    .hero-tagline { font-size: 17px; }
 
     .category-card {
         min-height: 190px;
@@ -172,58 +152,41 @@
         height: 120px;
     }
 
-    .category-card h2 {
-        font-size: 16px;
-    }
-
-    /* Welcome section */
-
-    .welcome-section h2 {
-        font-size: 34px;
-    }
-
-    .welcome-section p {
-        font-size: 15px;
-    }
-
-    .welcome-cactus {
-        max-height: 270px;
-    }
+    .category-card h2 { font-size: 16px; }
+    .welcome-section h2 { font-size: 34px; }
+    .welcome-section p { font-size: 15px; }
+    .welcome-cactus { max-height: 270px; }
 }
 
+/* Why Us starts scaling down on tablet and stays smaller on mobile */
+@media (max-width: 991px) {
+    .why-us-title { font-size: 26px; }
+    .benefit-icon { font-size: 32px; }
+    .benefit-title { font-size: 16px; }
+    .benefit-description { font-size: 12px; }
+}
 
-/* ========================================
-   MOBILE
-   576px AND BELOW
-======================================== */
-
+/* Mobile (up to 576px): compact cards, logo and promotional content */
 @media (max-width: 576px) {
-
-    /* Main logo */
-
     .cactushop-logo {
         font-size: clamp(29px, 8vw, 48px);
         letter-spacing: -1px;
     }
 
-    
-
-.logo-cactus-o {
-    width: 0.72em;
-    height: 0.9em;
-    object-fit: contain;
-    flex-shrink: 0;
-    margin: 0 -0.03em;
-    transform: translateY(-0.06em);
-}
-
+    /* Mobile-specific image used as the letter O in some logo markup */
+    .logo-cactus-o {
+        width: 0.72em;
+        height: 0.9em;
+        object-fit: contain;
+        flex-shrink: 0;
+        margin: 0 -0.03em;
+        transform: translateY(-0.06em);
+    }
 
     .hero-tagline {
         font-size: 14px;
         letter-spacing: 1px;
     }
-
-    /* Category cards */
 
     .category-card {
         min-height: 155px;
@@ -236,138 +199,33 @@
         height: 105px;
     }
 
-    .category-card h2 {
-        font-size: 15px;
-    }
-
-    /* Welcome section */
-
-    .welcome-section h2 {
-        font-size: 29px;
-    }
+    .category-card h2 { font-size: 15px; }
+    .welcome-section h2 { font-size: 29px; }
 
     .welcome-section p {
         font-size: 14px;
         line-height: 1.6;
     }
 
-    .shop-now-btn {
-        font-size: 14px;
-    }
+    .shop-now-btn { font-size: 14px; }
 
     .welcome-cactus {
         max-width: 220px;
         max-height: 220px;
     }
+
+    /* Keep benefit text and icons proportional on narrow screens */
+    .why-us-title { font-size: 24px; }
+    .benefit-card { padding: 10px 4px; }
+    .benefit-icon { font-size: 27px; }
+    .benefit-title { font-size: 13px; }
+    .benefit-description { font-size: 11px; }
 }
 
-/* ========================================
-   WHY CHOOSE US SECTION
-======================================== */
-
-.why-us-section {
-    width: 100%;
-}
-
-/* Section heading */
-
-.why-us-title {
-    color: var(--green);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-/* Individual benefits */
-
-.benefit-card {
-    padding: 20px 12px;
-    text-align: center;
-}
-
-/* Pink Bootstrap icons */
-
-.benefit-icon {
-    display: inline-block;
-
-    color: var(--pink);
-    font-size: 38px;
-    line-height: 1;
-}
-
-/* Benefit heading */
-
-.benefit-title {
-    color: var(--green);
-    font-size: 18px;
-    font-weight: 600;
-}
-
-/* Description */
-
-.benefit-description {
-    color: #588265;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-/* Tablet */
-
-@media (max-width: 991px) {
-
-    .why-us-title {
-        font-size: 26px;
-    }
-
-    .benefit-icon {
-        font-size: 32px;
-    }
-
-    .benefit-title {
-        font-size: 16px;
-    }
-
-    .benefit-description {
-        font-size: 12px;
-    }
-}
-
-/* Mobile */
-
-@media (max-width: 576px) {
-
-    .why-us-title {
-        font-size: 24px;
-    }
-
-    .benefit-card {
-        padding: 10px 4px;
-    }
-
-    .benefit-icon {
-        font-size: 27px;
-    }
-
-    .benefit-title {
-        font-size: 13px;
-    }
-
-    .benefit-description {
-        font-size: 11px;
-    }
-}
-
-
-
-/* ========================================
-   ACCESSIBILITY
-======================================== */
-
+/* Accessibility: respect visitors who prefer less motion */
 @media (prefers-reduced-motion: reduce) {
-
     .category-card,
     .shop-now-btn {
         transition: none;
     }
-
 }

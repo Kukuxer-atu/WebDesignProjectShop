@@ -1,147 +1,98 @@
-
 /* =========================================
-   CACTUSHOP - GLOBAL STYLES
+   CACTUSHOP — GLOBAL STYLES
+   Shared across Home, Shop and other pages.
 ========================================= */
 
-
-/* =========================================
-   COLOUR PALETTE
-========================================= */
-
+/* Brand colours used throughout the site. */
 :root {
     --green: #245D3A;
     --medium-green: #397C50;
     --light-green: #EEF4E9;
-
     --pink: #EA8DA8;
     --light-pink: #FCE9EF;
-
     --cream: #FBFAF5;
     --white: #FFFFFF;
-
     --text-color: #263D2D;
 }
 
-
 /* =========================================
-   GENERAL STYLES
+   BASE ELEMENTS
 ========================================= */
 
+/* Full-height flex layout keeps the shared footer at the bottom of short pages. */
 body {
     margin: 0;
     padding: 0;
-
+    min-height: 100vh; /* Fallback for older browsers. */
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
     background-color: var(--white);
     color: var(--text-color);
-
     font-family: Arial, Helvetica, sans-serif;
 }
-
-/* General links */
 
 a {
     color: var(--green);
     text-decoration: none;
 }
 
-a:hover {
-    color: var(--medium-green);
-}
+a:hover { color: var(--medium-green); }
 
-/* General headings */
+h1, h2, h3, h4, h5, h6 { color: var(--green); }
+img { max-width: 100%; }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: var(--green);
-}
-
-/* Responsive images */
-
-img {
-    max-width: 100%;
-}
-
-/* Keyboard accessibility */
-
+/* Visible keyboard focus for links and buttons. */
 a:focus-visible,
 button:focus-visible {
     outline: 3px solid var(--pink);
     outline-offset: 3px;
 }
 
-
 /* =========================================
-   HEADER
+   HEADER AND NAVIGATION ICONS
 ========================================= */
 
-/* Clean white header without navigation line */
-
+/* White header with no divider underneath. */
 .site-header {
     background-color: var(--white);
     border: none;
     box-shadow: none;
 }
 
-/* Hamburger button */
-
 .hamburger-btn {
     background: transparent;
     border: none;
-
     color: var(--green);
-
     font-size: 40px;
     line-height: 1;
     padding: 0;
-
     transition: color 0.2s ease;
 }
 
-.hamburger-btn:hover {
-    color: var(--medium-green);
-}
+.hamburger-btn:hover { color: var(--medium-green); }
 
-
-/* =========================================
-   ROUND HEADER ICONS
-========================================= */
-
-/* Search, profile and cart */
-
-
+/* Shared circular style for search, profile and cart. */
 .round-icon {
     width: 56px;
     height: 56px;
     min-width: 56px;
     min-height: 56px;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-
     padding: 0;
     box-sizing: border-box;
-
     background-color: var(--green);
     color: var(--white);
-
     border: none;
     border-radius: 50%;
-
     font-size: 25px;
     line-height: 1;
-
     text-decoration: none;
     cursor: pointer;
-
-    transition:
-        background-color 0.2s ease,
-        transform 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .round-icon:hover {
@@ -150,72 +101,47 @@ button:focus-visible {
     transform: scale(1.05);
 }
 
-
-/* Cart item counter */
-
+/* Small pink badge on the cart icon. */
 .cart-count {
     position: absolute;
-
     top: -5px;
     right: -5px;
-
     min-width: 22px;
     height: 22px;
     padding: 0 5px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background-color: var(--pink);
     color: var(--green);
-
     border-radius: 50%;
-
     font-size: 12px;
     font-weight: bold;
 }
-
 
 /* =========================================
    BOOTSTRAP OFFCANVAS SIDEBAR
 ========================================= */
 
-/* Sidebar appearance */
-
-.offcanvas {
-    background-color: var(--white);
-}
-
-/* Sidebar title */
+.offcanvas { background-color: var(--white); }
 
 .offcanvas-title {
     color: var(--green);
-
     font-family: Georgia, "Times New Roman", serif;
     font-size: 26px;
     font-weight: bold;
 }
 
-/* Sidebar links */
-
+/* Sidebar links are full-width tap targets. */
 .offcanvas-body nav a {
     display: block;
-
     padding: 12px 15px;
-
     color: var(--green);
-
     font-size: 17px;
     font-weight: 500;
-
     text-decoration: none;
-
     border-radius: 12px;
-
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .offcanvas-body nav a:hover {
@@ -223,100 +149,94 @@ button:focus-visible {
     color: var(--medium-green);
 }
 
-/* Active page in menu */
-
+/* Highlights the page currently selected in the menu. */
 .offcanvas-body nav a.active {
     background-color: var(--light-green);
     color: var(--green);
-
     font-weight: bold;
 }
-
-/* Close button focus */
 
 .offcanvas .btn-close:focus-visible {
     outline: 3px solid var(--pink);
     box-shadow: none;
 }
 
-
-/* =========================================
-   BOOTSTRAP DROPDOWN
-========================================= */
-
+/* Profile dropdown menu. */
 .dropdown-menu {
     border: 1px solid var(--light-green);
     border-radius: 15px;
-
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-
 /* =========================================
-   GLOBAL FOOTER
+   FOOTER
 ========================================= */
 
 .site-footer {
     position: relative;
-
     margin-top: auto;
     padding: 0;
-
     background-color: var(--cream);
     border-top: 1px solid var(--light-green);
-
     text-align: center;
     overflow: hidden;
 }
 
-/* Footer shop name */
-
 .footer-name {
     color: var(--green);
-
     font-family: Georgia, "Times New Roman", serif;
     font-size: 21px;
 }
 
-/* Footer tagline */
+.footer-tagline { color: #588265; font-size: 14px; }
+.footer-copyright { color: #718476; font-size: 12px; }
 
-.footer-tagline {
-    color: #588265;
-    font-size: 14px;
-}
-
-/* Copyright */
-
-.footer-copyright {
-    color: #718476;
-    font-size: 12px;
-}
-
-/* Small cactus in bottom-right corner */
-
+/* Decorative cactus stays in the footer's bottom-right corner. */
 .footer-cactus {
     position: absolute;
-
     width: 85px;
     height: 100px;
-
     right: 15px;
     bottom: -10px;
-
     object-fit: contain;
     pointer-events: none;
 }
 
-
 /* =========================================
-   TABLET
-   577px - 991px
+   SHARED CACTUSHOP LOGO
 ========================================= */
 
+/* Text wordmark with the cactus image replacing the letter “o”. */
+.cactushop-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 7vw, 100px);
+    font-weight: bold;
+    letter-spacing: -2px;
+    line-height: 1;
+    color: #245D3A;
+    white-space: nowrap;
+}
+
+.cactushop-logo:hover { color: #245D3A; }
+
+.logo-cactus {
+    display: block;
+    width: 0.7em;
+    height: 0.9em;
+    object-fit: contain;
+    margin-left: -0.04em;
+    margin-right: -0.04em;
+}
+
+/* =========================================
+   RESPONSIVE STYLES
+========================================= */
+
+/* Tablet: slightly smaller header controls (577–991px). */
 @media (min-width: 577px) and (max-width: 991px) {
-
-    /* Header icons */
-
     .round-icon {
         width: 49px;
         height: 49px;
@@ -325,44 +245,23 @@ button:focus-visible {
         font-size: 22px;
     }
 
-    /* Hamburger */
-
-    .hamburger-btn {
-        font-size: 36px;
-    }
-
+    .hamburger-btn { font-size: 36px; }
 }
 
-/* Footer cactus on tablets */
-
+/* Tablet and mobile: scale down the decorative footer cactus. */
 @media (max-width: 991px) {
-
     .footer-cactus {
         width: 70px;
         height: 85px;
-
         right: 10px;
     }
-
 }
 
-
-/* =========================================
-   MOBILE
-   576px AND BELOW
-========================================= */
-
+/* Mobile: compact header, sidebar, footer and wordmark (≤576px). */
 @media (max-width: 576px) {
+    .hamburger-btn { font-size: 32px; }
 
-    /* Hamburger */
-
-    .hamburger-btn {
-        font-size: 32px;
-    }
-
-    /* Header icons */
-
-     .round-icon {
+    .round-icon {
         width: 43px;
         height: 43px;
         min-width: 43px;
@@ -370,113 +269,47 @@ button:focus-visible {
         font-size: 19px;
     }
 
-    /* Cart counter */
-
     .cart-count {
         min-width: 19px;
         height: 19px;
-
         font-size: 10px;
     }
 
-    /* Sidebar */
+    .offcanvas-title { font-size: 23px; }
+    .offcanvas-body nav a { font-size: 16px; }
 
-    .offcanvas-title {
-        font-size: 23px;
-    }
-
-    .offcanvas-body nav a {
-        font-size: 16px;
-    }
-
-    /* Footer */
-
+    /* Leaves space for the cactus beside the footer text. */
     .site-footer .container {
         padding-left: 65px;
         padding-right: 65px;
     }
 
-    .footer-name {
-        font-size: 18px;
-    }
-
-    .footer-tagline {
-        font-size: 12px;
-    }
-
-    .footer-copyright {
-        font-size: 10px;
-    }
+    .footer-name { font-size: 18px; }
+    .footer-tagline { font-size: 12px; }
+    .footer-copyright { font-size: 10px; }
 
     .footer-cactus {
         width: 55px;
         height: 70px;
-
         right: 5px;
         bottom: -5px;
     }
 
-}
-
-/* =========================================
-   CACTUSHOP SHARED LOGO
-========================================= */
-
-.cactushop-logo {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(42px, 7vw, 100px);
-    font-weight: bold;
-
-    letter-spacing: -2px;
-    line-height: 1;
-
-    color: #245D3A;
-    white-space: nowrap;
-}
-
-.cactushop-logo:hover {
-    color: #245D3A;
-}
-
-/* Cactus replacing the letter O */
-
-.logo-cactus {
-    display: block;
-
-    width: 0.7em;
-    height: 0.9em;
-
-    object-fit: contain;
-
-    margin-left: -0.04em;
-    margin-right: -0.04em;
-}
-
-/* Mobile */
-
-@media (max-width: 576px) {
     .cactushop-logo {
         font-size: clamp(35px, 9vw, 52px);
         letter-spacing: -1px;
     }
 }
 
-
-
 /* =========================================
    ACCESSIBILITY
 ========================================= */
 
+/* Remove nonessential motion when requested in device settings. */
 @media (prefers-reduced-motion: reduce) {
-
     .hamburger-btn,
     .round-icon,
     .offcanvas-body nav a {
         transition: none;
     }
-
 }
