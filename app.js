@@ -202,6 +202,12 @@ app.get("/shop", (req, res) => {
 });
 
 
+
+/* =========================================
+   USER PROFILE
+========================================= */
+
+
 /* =========================================
    PRODUCT DETAILS
 ========================================= */
@@ -209,21 +215,11 @@ app.get("/shop", (req, res) => {
 app.get("/product/:id", (req, res) => {
 
     const product = products.find(
-        item => item.id === req.params.id
+        item => String(item.id) === String(req.params.id)
     );
 
     if (!product) {
-
-        return res.status(404).render(
-            "pages/404",
-            {
-                head: {
-                    title:
-                        "Product Not Found | CactuShop"
-                }
-            }
-        );
-
+        return res.status(404).send("Product not found");
     }
 
     res.render("pages/product", {
@@ -233,8 +229,10 @@ app.get("/product/:id", (req, res) => {
         },
 
         state: {
-            shop: true
+            product: true
         },
+
+        pageCss: "product.css",
 
         product: product
 
@@ -242,32 +240,6 @@ app.get("/product/:id", (req, res) => {
 
 });
 
-
-/* =========================================
-   USER PROFILE
-========================================= */
-
-app.get("/profile", (req, res) => {
-
-    if (!req.isAuthenticated()) {
-        return res.redirect("/");
-    }
-
-    res.render("pages/profile", {
-
-        head: {
-            title: "My Profile | CactuShop"
-        },
-
-        pageCss: "profile.css",
-
-        state: {
-            profile: true
-        }
-
-    });
-
-});
 
 
 /* =========================================

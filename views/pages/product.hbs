@@ -1,34 +1,98 @@
 
-<main class="product-detail">
+<main class="cactus-product-page">
 
-  <div class="product-detail-image">
-    <img src="{{product.image}}" alt="{{product.alt}}">
-  </div>
+  <a href="/shop" class="product-back-link">
+    <i class="bi bi-arrow-left"></i>
+    <span>Back to Shop</span>
+  </a>
+  
 
-  <div class="product-detail-info">
+  <section class="product-showcase">
 
-    <p class="category">{{product.category}}</p>
+    <!-- LEFT: WATERCOLOUR CACTUS -->
+    <div class="product-visual">
 
-    <h1>{{product.name}}</h1>
+      <div class="product-image-wrap">
+        <img
+          src="{{product.image}}"
+          alt="{{product.alt}}"
+          class="product-cactus-image"
+        >
+      </div>
 
-    <p>{{product.description}}</p>
+     
 
-    <p class="price">{{euro product.price}}</p>
+    </div>
 
-    <button
-      type="button"
-      class="add-to-cart"
-      data-add-to-cart="{{product.id}}"
-    >
-      Add to Cart
-    </button>
+    <!-- RIGHT: PRODUCT DETAILS -->
+    <div class="product-details">
 
-    <p data-cart-message aria-live="polite"></p>
+      <span class="product-category animate-detail">
+        {{product.category}}
+      </span>
 
-    <a href="/shop" class="back-link">
-      &larr; Back to Shop
-    </a>
+      <h1 class="product-name animate-detail">
+        {{product.name}}
+      </h1>
 
-  </div>
+      <div class="product-underline animate-detail"></div>
 
+      <p class="product-description animate-detail">
+        {{product.description}}
+      </p>
+
+      <div class="product-purchase animate-detail">
+
+        <p class="product-price">
+          €{{product.price}}
+        </p>
+
+        <form
+          class="product-buy-form"
+          action="/cart/add"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="productId"
+            value="{{product.id}}"
+          >
+
+          <div class="quantity-control">
+            <button
+              type="button"
+              class="quantity-minus"
+              aria-label="Decrease quantity"
+            >−</button>
+
+            <input
+              type="number"
+              name="quantity"
+              value="1"
+              min="1"
+              max="99"
+              aria-label="Quantity"
+              class="quantity-input"
+            >
+
+            <button
+              type="button"
+              class="quantity-plus"
+              aria-label="Increase quantity"
+            >+</button>
+          </div>
+
+          <button type="submit" class="product-buy-btn">
+            Buy Now
+          </button>
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+  <!-- Full-width soil at the bottom -->
+<div class="product-ground" aria-hidden="true"></div>
 </main>
+
+<script src="/js/product.js" defer></script>

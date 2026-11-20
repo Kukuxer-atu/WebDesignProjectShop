@@ -1,0 +1,357 @@
+
+/* =========================================
+   CACTUSHOP — PRODUCT PAGE
+   Colours and shared styles: styles.css
+========================================= */
+
+/* Page height includes extra soil below the first screen */
+.cactus-product-page {
+    --stage-height: max(100svh, 700px);
+
+    position: relative;
+    min-height: calc(var(--stage-height) + 290px);
+    background: var(--cream);
+    overflow: hidden;
+}
+
+/* Back to Shop */
+.product-back-link {
+    position: absolute;
+    top: 28px;
+    left: 5%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    transition: transform .2s;
+}
+
+.product-back-link:hover {
+    transform: translateX(-5px);
+}
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+/* Cactus left, information right */
+.product-showcase {
+    display: grid;
+    grid-template-columns: 52% 48%;
+    min-height: var(--stage-height);
+}
+
+/* Cactus sits at the bottom of its column */
+.product-visual {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.product-image-wrap {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    animation: cactusRise 1.1s ease-out both;
+}
+
+/* Auto proportions prevent empty space inside the image */
+.product-cactus-image {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 95%;
+    max-height: calc(var(--stage-height) - 80px);
+    transform: translateY(22px);
+}
+
+/* Soil spans the page and extends below the first screen */
+.product-ground {
+    position: absolute;
+    top: calc(var(--stage-height) - 20px);
+    left: 0;
+    width: 100%;
+    height: 415px;
+    z-index: 2;
+    pointer-events: none;
+
+    background: url("/images/soil-ground.png")
+        center top / auto 415px repeat-x;
+}
+
+/* =========================================
+   PRODUCT INFORMATION
+========================================= */
+
+.product-details {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 0;
+    padding: 80px 9% 80px 6%;
+}
+
+/* Category badge */
+.product-category {
+    padding: 8px 24px;
+    margin-bottom: 22px;
+    border-radius: 50px;
+    background: var(--light-green);
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* Product title and underline */
+.product-name {
+    margin: 0;
+    font: 700 clamp(48px, 5vw, 82px)/1.08 Georgia, serif;
+}
+
+.product-underline {
+    width: 105px;
+    height: 7px;
+    margin: 28px 0;
+    border-radius: 50px;
+    background: var(--medium-green);
+}
+
+/* Description */
+.product-description {
+    max-width: 520px;
+    margin: 0;
+    font-size: clamp(17px, 1.5vw, 22px);
+    line-height: 1.7;
+}
+
+/* =========================================
+   PRICE AND BUY BUTTON
+========================================= */
+
+.product-purchase {
+    width: 100%;
+    margin-top: 55px;
+}
+
+.product-price {
+    margin: 0 0 28px;
+    color: var(--pink);
+    font: 700 clamp(44px, 4vw, 65px) Georgia, serif;
+}
+
+.product-buy-form {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Quantity selector */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 165px;
+    height: 62px;
+    border: 1px solid var(--medium-green);
+    border-radius: 50px;
+}
+
+.quantity-control button {
+    flex: 1;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--green);
+    font-size: 27px;
+    cursor: pointer;
+}
+
+.quantity-input {
+    width: 42px;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--green);
+    text-align: center;
+    font-size: 21px;
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.quantity-input::-webkit-inner-spin-button,
+.quantity-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+/* Buy Now */
+.product-buy-btn {
+    flex: 1;
+    min-width: 165px;
+    max-width: 310px;
+    height: 62px;
+    border: 0;
+    border-radius: 50px;
+    background: var(--pink);
+    color: var(--white);
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform .2s, opacity .2s;
+}
+
+.product-buy-btn:hover {
+    transform: translateY(-3px);
+    opacity: .9;
+}
+
+/* =========================================
+   ENTRANCE ANIMATIONS
+========================================= */
+
+/* Cactus rises from the ground */
+@keyframes cactusRise {
+    from {
+        opacity: 0;
+        transform: translateY(160px) scale(.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Product details enter from the right */
+@keyframes detailsSlide {
+    from {
+        opacity: 0;
+        transform: translateX(90px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-detail {
+    animation: detailsSlide .8s ease-out both;
+}
+
+/* Stagger the product information */
+.product-category    { animation-delay: .25s; }
+.product-name        { animation-delay: .35s; }
+.product-underline   { animation-delay: .45s; }
+.product-description { animation-delay: .55s; }
+.product-purchase    { animation-delay: .75s; }
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+    .product-showcase {
+        grid-template-columns: 50% 50%;
+    }
+
+    .product-details {
+        padding: 80px 6% 60px 3%;
+    }
+
+    .product-buy-form {
+        flex-wrap: wrap;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    /* Mobile uses its own cactus-section height */
+    .cactus-product-page {
+        --mobile-visual-height: min(63svh, 570px);
+        min-height: auto;
+    }
+
+    /* Stack the cactus above the information */
+    .product-showcase {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+    }
+
+    .product-back-link {
+        top: 22px;
+        left: 22px;
+        font-size: 15px;
+    }
+
+    /* Larger cactus, sitting directly on the soil */
+    .product-visual {
+        height: var(--mobile-visual-height);
+        padding-top: 65px;
+        flex-shrink: 0;
+    }
+
+    .product-cactus-image {
+        max-width: 92%;
+        max-height: 100%;
+        transform: translateY(10px);
+    }
+
+    /* Thin soil edge instead of a thick divider */
+    .product-ground {
+        top: calc(var(--mobile-visual-height) - 20px);
+        height: 36px;
+        background-size: auto 240px;
+    }
+
+    .product-details {
+        padding: 65px 7% 70px;
+    }
+
+    .product-name {
+        font-size: clamp(42px, 9vw, 58px);
+    }
+
+    .product-description {
+        font-size: 17px;
+    }
+
+    .product-purchase {
+        margin-top: 35px;
+    }
+
+    .product-buy-form {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .quantity-control {
+        width: 130px;
+        height: 56px;
+    }
+
+    .product-buy-btn {
+        min-width: 140px;
+        height: 56px;
+        font-size: 18px;
+    }
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+    .product-image-wrap,
+    .animate-detail {
+        animation: none;
+    }
+}
